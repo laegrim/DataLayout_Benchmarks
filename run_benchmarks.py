@@ -28,14 +28,16 @@ benchmarks = ['backprop',
               'hybridsort',
               'kmeans',
               'lavaMD',
-              'leukocyte',
+              'leukocyte/CUDA',
+	      'leukocyte',
               'lud',
               'myocyte',
               'nn',
               'nw',
               'particlefilter',
               'pathfinder',
-              'srad',
+              'srad/srad_v1',
+	      'srad/srad_v2',
               'streamcluster',
               'mummergpu',
              ]
@@ -87,9 +89,9 @@ def run_benchmarks(benchmarks, benchmarks_base, timeout):
             print(benchmarks_base['args_base'] + run)
             try:
                 result = get_mem_divergence(benchmark_dir, benchmarks_base['args_base'] + [run], timeout)
+            	results[benchmark_dir].append((run, result))
             except ErrorReturnCode as err:
                 print(err)
-            results[benchmark_dir].append((run, result))
     return results
     
     
@@ -103,7 +105,6 @@ for benchmark in results:
             row = [benchmark, run[0], run[1]['gld_min'], run [1]['gld_avg'], run[1]['gld_max'], run[1]['gst_min'], run[1]['gst_avg'], run[1]['gst_max']]
             table.append(row)
             
+cd(benchmarks_base['benchmarks_base_dir'])
 df = pd.DataFrame(table, columns=['benchmark', 'run', 'gld_min', 'gld_avg', 'gld_max', 'gst_min', 'gst_avg', 'gst_max'])
-
-
 df.to_csv('rodinia_metrics.csv')
