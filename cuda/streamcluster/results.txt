@@ -1,0 +1,10 @@
+==15523== NVPROF is profiling process 15523, command: ./sc_gpu 10 20 256 65536 65536 1000 none output.txt 1
+==15523== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==15523== Profiling application: ./sc_gpu 10 20 256 65536 65536 1000 none output.txt 1
+==15523== Profiling result:
+==15523== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla K40c (0)"
+	Kernel: kernel_compute_cost(int, int, long, Point*, int, int, float*, float*, int*, bool*)
+       1611              gld_transactions_per_request      Global Load Transactions Per Request    1.044210    1.084968    1.058956
+       1611              gst_transactions_per_request     Global Store Transactions Per Request    1.494278   11.924000    3.364325

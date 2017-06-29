@@ -1,0 +1,25 @@
+,benchmark,run,gld_min,gld_avg,gld_max,gst_min,gst_avg,gst_max
+0,/home/st1289/rodinia_3.1/cuda/heartwall,"['./heartwall', '../../data/heartwall/test.avi', '20']",1.504981,1.643134,1.650407,4.520294,1.929505,4.657462
+1,/home/st1289/rodinia_3.1/cuda/hotspot,"['./hotspot', '512', '2', '2', '../../data/hotspot/temp_512', '../../data/hotspot/power_512', 'output.out']",2.930233,2.930233,2.930233,2.465116,2.465116,2.465116
+2,/home/st1289/rodinia_3.1/cuda/streamcluster,"['./sc_gpu', '10', '20', '256', '65536', '65536', '1000', 'none', 'output.txt', '1']",1.04421,1.058956,1.084968,3.364325,1.494278,11.924
+3,/home/st1289/rodinia_3.1/cuda/huffman,"['./pavle', '../../data/huffman/test1024_H2.206587175259.in', '']",1.04421,1.058956,1.084968,3.364325,1.494278,11.924
+4,/home/st1289/rodinia_3.1/cuda/gaussian,"['./gaussian', '-f', '../../data/gaussian/matrix4.txt']",1.0,1.0,1.0,1.0,1.0,1.0
+5,/home/st1289/rodinia_3.1/cuda/gaussian,"['./gaussian', '-s', '16']",1.0,1.562963,2.05,4.266667,1.0,8.0
+6,/home/st1289/rodinia_3.1/cuda/nn,"['./nn', 'filelist_4', '-r', '5', '-lat', '30', '-lng', '90']",1.999252,1.999252,1.999252,1.0,1.0,1.0
+7,/home/st1289/rodinia_3.1/cuda/backprop,"['./backprop', '65536']",1.53125,1.53125,1.53125,1.999969,1.999969,1.999969
+8,/home/st1289/rodinia_3.1/cuda/hybridsort,"['./hybridsort', 'r']",0.0,0.0,0.0,1.0,1.0,1.0
+9,/home/st1289/rodinia_3.1/cuda/cfd,"['./euler3d', '../../data/cfd/fvcorr.domn.097K', '', '', '']",0.0,0.0,0.0,1.0,1.0,1.0
+10,/home/st1289/rodinia_3.1/cuda/cfd,"['./euler3d', '../../data/cfd/fvcorr.domn.193K', '', '', '']",0.0,0.0,0.0,1.0,1.0,1.0
+11,/home/st1289/rodinia_3.1/cuda/cfd,"['./euler3d', '../../data/cfd/missile.domn.0.2M', '', '']",0.0,0.0,0.0,1.0,1.0,1.0
+12,/home/st1289/rodinia_3.1/cuda/myocyte,"['./myocyte.out', '100', '1', '0']",1.04421,1.058956,1.084968,3.364325,1.494278,11.924
+13,/home/st1289/rodinia_3.1/cuda/b+tree,"['./b+tree.out', 'file', '../../data/b+tree/mil.txt', 'command', '../../data/b+tree/command.txt']",1.0,1.485664,3.488894,0.916667,0.0,1.0
+14,/home/st1289/rodinia_3.1/cuda/lavaMD,"['./lavaMD', '-boxes1d', '10']",4.620377,4.620377,4.620377,6.25,6.25,6.25
+15,/home/st1289/rodinia_3.1/cuda/particlefilter,"['./particlefilter_naive', '-x', '128', '-y', '128', '-z', '10', '-np', '1000']",1.00106,1.002018,1.002885,1.96875,1.96875,1.96875
+16,/home/st1289/rodinia_3.1/cuda/particlefilter,"['./particlefilter_float', '-x', '128', '-y', '128', '-z', '10', '-np', '1000']",1.0,1.0,1.0,1.96875,1.96875,1.96875
+17,/home/st1289/rodinia_3.1/cuda/hotspot3D,"['./3D', '512', '8', '100', '../../data/hotspot3D/power_512x8', '../../data/hotspot3D/temp_512x8', 'output.out']",1.3125,1.3125,1.3125,1.0,1.0,1.0
+18,/home/st1289/rodinia_3.1/cuda/nw,"['./needle', '2048', '10']",1.842105,2.210526,2.578947,1.465551,1.0625,1.875
+19,/home/st1289/rodinia_3.1/cuda/mummergpu,"['bin/mummergpu', '../../data/mummergpu/NC_003997.fna', '../../data/mummergpu/NC_003997_q100bp.fna', '>', 'NC_00399.out']",1.3125,1.3125,1.3125,1.0,1.0,1.0
+20,/home/st1289/rodinia_3.1/cuda/bfs,"['./bfs', '../../data/bfs/graph1MW_6.txt']",1.0,1.485664,3.488894,0.916667,0.0,1.0
+21,/home/st1289/rodinia_3.1/cuda/leukocyte,"['./CUDA/leukocyte', '', '../../data/leukocyte/testfile.avi', '5', '']",1.0,1.485664,3.488894,0.916667,0.0,1.0
+22,/home/st1289/rodinia_3.1/cuda/pathfinder,"['./pathfinder', '100000', '100', '20', '>', 'result.txt']",1.999252,1.999252,1.999252,1.0,1.0,1.0
+23,/home/st1289/rodinia_3.1/cuda/kmeans,"['./kmeans', '-o', '-i', '../../data/kmeans/kdd_cup', '']",31.998186,31.998186,31.998186,3.999806,3.999806,3.999806

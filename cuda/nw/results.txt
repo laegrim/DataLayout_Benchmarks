@@ -1,0 +1,13 @@
+==16046== NVPROF is profiling process 16046, command: ./needle 2048 10
+==16046== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==16046== Profiling application: ./needle 2048 10
+==16046== Profiling result:
+==16046== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla K40c (0)"
+	Kernel: needle_cuda_shared_1(int*, int*, int, int, int, int)
+        128              gld_transactions_per_request      Global Load Transactions Per Request    1.842105    2.578947    2.210526
+        128              gst_transactions_per_request     Global Store Transactions Per Request    1.062500    1.875000    1.468750
+	Kernel: needle_cuda_shared_2(int*, int*, int, int, int, int)
+        127              gld_transactions_per_request      Global Load Transactions Per Request    1.842105    2.578947    2.207625
+        127              gst_transactions_per_request     Global Store Transactions Per Request    1.062500    1.875000    1.465551

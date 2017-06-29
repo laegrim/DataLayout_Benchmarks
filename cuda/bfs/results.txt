@@ -1,0 +1,13 @@
+==16169== NVPROF is profiling process 16169, command: ./bfs ../../data/bfs/graph1MW_6.txt
+==16169== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==16169== Profiling application: ./bfs ../../data/bfs/graph1MW_6.txt
+==16169== Profiling result:
+==16169== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla K40c (0)"
+	Kernel: Kernel(Node*, int*, bool*, bool*, bool*, int*, int)
+         12              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    3.488894    1.485664
+         12              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    2.732105    1.271664
+	Kernel: Kernel2(bool*, bool*, bool*, bool*, int)
+         12              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
+         12              gst_transactions_per_request     Global Store Transactions Per Request    0.000000    1.000000    0.916667

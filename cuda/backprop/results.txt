@@ -1,0 +1,13 @@
+==15662== NVPROF is profiling process 15662, command: ./backprop 65536
+==15662== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==15662== Profiling application: ./backprop 65536
+==15662== Profiling result:
+==15662== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla K40c (0)"
+	Kernel: bpnn_layerforward_CUDA(float*, float*, float*, float*, int, int)
+          1              gld_transactions_per_request      Global Load Transactions Per Request    1.531250    1.531250    1.531250
+          1              gst_transactions_per_request     Global Store Transactions Per Request    1.500000    1.500000    1.500000
+	Kernel: bpnn_adjust_weights_cuda(float*, int, float*, int, float*, float*)
+          1              gld_transactions_per_request      Global Load Transactions Per Request    1.446419    1.446419    1.446419
+          1              gst_transactions_per_request     Global Store Transactions Per Request    1.999969    1.999969    1.999969
