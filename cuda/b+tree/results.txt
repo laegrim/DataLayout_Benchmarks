@@ -1,1 +1,13 @@
-======== Error: application not found.
+==2900== NVPROF is profiling process 2900, command: ./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+==2900== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2900== Profiling application: ./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+==2900== Profiling result:
+==2900== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla K40c (0)"
+	Kernel: findRangeK
+          1              gld_transactions_per_request      Global Load Transactions Per Request    1.318846    1.318846    1.318846
+          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+	Kernel: findK
+          1              gld_transactions_per_request      Global Load Transactions Per Request    1.308654    1.308654    1.308654
+          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000

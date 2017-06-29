@@ -1,8 +1,8 @@
-==20288== NVPROF is profiling process 20288, command: ./nn filelist_4 -r 5 -lat 30 -lng 90
-==20288== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==20288== Profiling application: ./nn filelist_4 -r 5 -lat 30 -lng 90
-==20288== Profiling result:
-==20288== Metric result:
+==2653== NVPROF is profiling process 2653, command: ./nn filelist_4 -r 5 -lat 30 -lng 90
+==2653== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2653== Profiling application: ./nn filelist_4 -r 5 -lat 30 -lng 90
+==2653== Profiling result:
+==2653== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla K40c (0)"
 	Kernel: euclid(latLong*, float*, int, float, float)

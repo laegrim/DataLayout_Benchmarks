@@ -1,8 +1,8 @@
-==20175== NVPROF is profiling process 20175, command: ./srad 2048 2048 0 127 0 127 0.5 2
-==20175== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==20175== Profiling application: ./srad 2048 2048 0 127 0 127 0.5 2
-==20175== Profiling result:
-==20175== Metric result:
+==2613== NVPROF is profiling process 2613, command: ./srad 2048 2048 0 127 0 127 0.5 2
+==2613== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2613== Profiling application: ./srad 2048 2048 0 127 0 127 0.5 2
+==2613== Profiling result:
+==2613== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla K40c (0)"
 	Kernel: srad_cuda_1(float*, float*, float*, float*, float*, float*, int, int, float)

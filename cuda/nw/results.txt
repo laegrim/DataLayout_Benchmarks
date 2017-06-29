@@ -1,8 +1,8 @@
-==20760== NVPROF is profiling process 20760, command: ./needle 2048 10
-==20760== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==20760== Profiling application: ./needle 2048 10
-==20760== Profiling result:
-==20760== Metric result:
+==2354== NVPROF is profiling process 2354, command: ./needle 2048 10
+==2354== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2354== Profiling application: ./needle 2048 10
+==2354== Profiling result:
+==2354== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla K40c (0)"
 	Kernel: needle_cuda_shared_1(int*, int*, int, int, int, int)

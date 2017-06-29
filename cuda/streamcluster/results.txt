@@ -1,8 +1,8 @@
-==14049== NVPROF is profiling process 14049, command: ./sc_gpu 10 20 256 65536 65536 1000 none output.txt 1
-==14049== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==14049== Profiling application: ./sc_gpu 10 20 256 65536 65536 1000 none output.txt 1
-==14049== Profiling result:
-==14049== Metric result:
+==32306== NVPROF is profiling process 32306, command: ./sc_gpu 10 20 256 65536 65536 1000 none output.txt 1
+==32306== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==32306== Profiling application: ./sc_gpu 10 20 256 65536 65536 1000 none output.txt 1
+==32306== Profiling result:
+==32306== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla K40c (0)"
 	Kernel: kernel_compute_cost(int, int, long, Point*, int, int, float*, float*, int*, bool*)

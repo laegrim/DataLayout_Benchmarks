@@ -1,8 +1,8 @@
-==20322== NVPROF is profiling process 20322, command: ./heartwall ../../data/heartwall/test.avi 20
-==20322== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==20322== Profiling application: ./heartwall ../../data/heartwall/test.avi 20
-==20322== Profiling result:
-==20322== Metric result:
+==4084== NVPROF is profiling process 4084, command: ./heartwall ../../data/heartwall/test.avi 20
+==4084== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==4084== Profiling application: ./heartwall ../../data/heartwall/test.avi 20
+==4084== Profiling result:
+==4084== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla K40c (0)"
 	Kernel: kernel(void)

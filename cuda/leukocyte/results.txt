@@ -1,5 +1,16 @@
-==20102== NVPROF is profiling process 20102, command: ./CUDA/leukocyte  ../../data/leukocyte/testfile.avi 5 
-==20102== Profiling application: ./CUDA/leukocyte  ../../data/leukocyte/testfile.avi 5 
-==20102== Profiling result:
-No events/metrics were profiled.
-======== Error: Application returned non-zero code 1
+==4374== NVPROF is profiling process 4374, command: ./CUDA/leukocyte ../../data/leukocyte/testfile.avi 5
+==4374== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==4374== Profiling application: ./CUDA/leukocyte ../../data/leukocyte/testfile.avi 5
+==4374== Profiling result:
+==4374== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla K40c (0)"
+	Kernel: dilate_kernel(int, int, int, int, float*)
+          1              gld_transactions_per_request      Global Load Transactions Per Request    0.000000    0.000000    0.000000
+          1              gst_transactions_per_request     Global Store Transactions Per Request   29.333333   29.333333   29.333333
+	Kernel: IMGVF_kernel(float**, float**, int*, int*, float, float, float, int, float)
+          5              gld_transactions_per_request      Global Load Transactions Per Request    1.943045    1.956069    1.948207
+          5              gst_transactions_per_request     Global Store Transactions Per Request    1.941543    1.941590    1.941565
+	Kernel: GICOV_kernel(int, float*)
+          1              gld_transactions_per_request      Global Load Transactions Per Request    0.000000    0.000000    0.000000
+          1              gst_transactions_per_request     Global Store Transactions Per Request    1.879474    1.879474    1.879474

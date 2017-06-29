@@ -1,8 +1,8 @@
-==20159== NVPROF is profiling process 20159, command: ./bfs ../../data/bfs/graph1MW_6.txt
-==20159== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==20159== Profiling application: ./bfs ../../data/bfs/graph1MW_6.txt
-==20159== Profiling result:
-==20159== Metric result:
+==3190== NVPROF is profiling process 3190, command: ./bfs ../../data/bfs/graph1MW_6.txt
+==3190== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==3190== Profiling application: ./bfs ../../data/bfs/graph1MW_6.txt
+==3190== Profiling result:
+==3190== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla K40c (0)"
 	Kernel: Kernel(Node*, int*, bool*, bool*, bool*, int*, int)

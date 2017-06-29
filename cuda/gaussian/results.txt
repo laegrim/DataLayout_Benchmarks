@@ -1,8 +1,8 @@
-==20066== NVPROF is profiling process 20066, command: ./gaussian -s 16
-==20066== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==20066== Profiling application: ./gaussian -s 16
-==20066== Profiling result:
-==20066== Metric result:
+==32098== NVPROF is profiling process 32098, command: ./gaussian -s 16
+==32098== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==32098== Profiling application: ./gaussian -s 16
+==32098== Profiling result:
+==32098== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla K40c (0)"
 	Kernel: Fan2(float*, float*, float*, int, int, int)

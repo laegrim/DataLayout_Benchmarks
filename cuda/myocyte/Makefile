@@ -1,3 +1,4 @@
+include ../../common/make.config
 # Example
 # target: dependencies
 	# command 1

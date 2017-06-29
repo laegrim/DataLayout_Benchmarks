@@ -1,1 +1,25 @@
-======== Error: application not found.
+==4692== NVPROF is profiling process 4692, command: ./pavle ../../data/huffman/test1024_H2.206587175259.in
+==4692== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==4692== Profiling application: ./pavle ../../data/huffman/test1024_H2.206587175259.in
+==4692== Profiling result:
+==4692== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla K40c (0)"
+	Kernel: vlc_encode_kernel_sm64huff(unsigned int*, unsigned int const *, unsigned int const *, unsigned int*, unsigned int*, unsigned int*, unsigned int*, unsigned int*)
+         10              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
+         10              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+	Kernel: uniformAdd(unsigned int*, unsigned int*, int, int, int)
+          1              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
+          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+	Kernel: histo_kernel(unsigned char*, long, unsigned int*)
+         32              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
+         32              gst_transactions_per_request     Global Store Transactions Per Request    0.000000    0.000000    0.000000
+	Kernel: pack2(unsigned int*, unsigned int*, unsigned int*, unsigned int*, unsigned int)
+          1              gld_transactions_per_request      Global Load Transactions Per Request   14.939788   14.939788   14.939788
+          1              gst_transactions_per_request     Global Store Transactions Per Request   15.302146   15.302146   15.302146
+	Kernel: void prescan<bool=0, bool=0>(unsigned int*, unsigned int const *, unsigned int*, int, int, int)
+          1              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
+          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+	Kernel: void prescan<bool=1, bool=0>(unsigned int*, unsigned int const *, unsigned int*, int, int, int)
+          1              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
+          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
