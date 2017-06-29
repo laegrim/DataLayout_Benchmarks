@@ -1,8 +1,8 @@
-==10880== NVPROF is profiling process 10880, command: ./backprop 65536
-==10880== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==10880== Profiling application: ./backprop 65536
-==10880== Profiling result:
-==10880== Metric result:
+==20785== NVPROF is profiling process 20785, command: ./backprop 65536
+==20785== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==20785== Profiling application: ./backprop 65536
+==20785== Profiling result:
+==20785== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla K40c (0)"
 	Kernel: bpnn_layerforward_CUDA(float*, float*, float*, float*, int, int)

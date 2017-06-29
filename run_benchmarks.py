@@ -29,7 +29,7 @@ benchmarks = ['backprop',
               'kmeans',
               'lavaMD',
               'leukocyte/CUDA',
-	      'leukocyte',
+              'leukocyte',
               'lud',
               'myocyte',
               'nn',
@@ -37,7 +37,7 @@ benchmarks = ['backprop',
               'particlefilter',
               'pathfinder',
               'srad/srad_v1',
-	      'srad/srad_v2',
+              'srad/srad_v2',
               'streamcluster',
               'mummergpu',
              ]
@@ -89,7 +89,7 @@ def run_benchmarks(benchmarks, benchmarks_base, timeout):
             print(benchmarks_base['args_base'] + run)
             try:
                 result = get_mem_divergence(benchmark_dir, benchmarks_base['args_base'] + [run], timeout)
-            	results[benchmark_dir].append((run, result))
+                results[benchmark_dir].append((run, result))
             except ErrorReturnCode as err:
                 print(err)
     return results

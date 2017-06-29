@@ -1,0 +1,19 @@
+==20709== NVPROF is profiling process 20709, command: ./dwt2d rgb.bmp -d 1024x1024 -f -5 -l 3
+==20709== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==20709== Profiling application: ./dwt2d rgb.bmp -d 1024x1024 -f -5 -l 3
+==20709== Profiling result:
+==20709== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla K40c (0)"
+	Kernel: void dwt_cuda::fdwt53Kernel<int=128, int=8>(int const *, int*, int, int, int)
+          3              gld_transactions_per_request      Global Load Transactions Per Request    1.200000    1.200000    1.200000
+          3              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+	Kernel: void dwt_cuda::fdwt53Kernel<int=192, int=8>(int const *, int*, int, int, int)
+          3              gld_transactions_per_request      Global Load Transactions Per Request    1.238095    1.238095    1.238095
+          3              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+	Kernel: void dwt_cuda::fdwt53Kernel<int=64, int=8>(int const *, int*, int, int, int)
+          3              gld_transactions_per_request      Global Load Transactions Per Request    1.333333    1.333333    1.333333
+          3              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+	Kernel: void c_CopySrcToComponents<int>(int*, int*, int*, unsigned char*, int)
+          1              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
+          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000

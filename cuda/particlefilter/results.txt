@@ -1,19 +1,19 @@
-==10843== NVPROF is profiling process 10843, command: ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
-==10843== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==10843== Profiling application: ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
-==10843== Profiling result:
-==10843== Metric result:
+==20228== NVPROF is profiling process 20228, command: ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
+==20228== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==20228== Profiling application: ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
+==20228== Profiling result:
+==20228== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla K40c (0)"
 	Kernel: sum_kernel(double*, int)
           9              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
           9              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
 	Kernel: likelihood_kernel(double*, double*, double*, double*, double*, int*, int*, double*, unsigned char*, double*, double*, int, int, int, int, int, int, int*, double*)
-          9              gld_transactions_per_request      Global Load Transactions Per Request    8.901214    9.278214    9.123535
+          9              gld_transactions_per_request      Global Load Transactions Per Request    8.921431    9.320794    9.139926
           9              gst_transactions_per_request     Global Store Transactions Per Request   27.825060   27.825060   27.825060
 	Kernel: normalize_weights_kernel(double*, int, double*, double*, double*, int*)
           9              gld_transactions_per_request      Global Load Transactions Per Request    1.029894    1.029894    1.029894
           9              gst_transactions_per_request     Global Store Transactions Per Request    1.058161    1.058161    1.058161
 	Kernel: find_index_kernel(double*, double*, double*, double*, double*, double*, double*, int)
-          9              gld_transactions_per_request      Global Load Transactions Per Request    1.001468    1.005937    1.002548
+          9              gld_transactions_per_request      Global Load Transactions Per Request    1.001680    1.004968    1.003003
           9              gst_transactions_per_request     Global Store Transactions Per Request    1.968750    1.968750    1.968750

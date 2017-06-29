@@ -1,20 +1,20 @@
-==13328== NVPROF is profiling process 13328, command: ./euler3d ../../data/cfd/missile.domn.0.2M  
-==13328== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==13328== Execution timeout, stopping the application...
-==13328== Profiling application: ./euler3d ../../data/cfd/missile.domn.0.2M  
-==13328== Profiling result:
-==13328== Metric result:
+==19285== NVPROF is profiling process 19285, command: ./euler3d ../../data/cfd/missile.domn.0.2M  
+==19285== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==19285== Execution timeout, stopping the application...
+==19285== Profiling application: ./euler3d ../../data/cfd/missile.domn.0.2M  
+==19285== Profiling result:
+==19285== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla K40c (0)"
 	Kernel: cuda_initialize_variables(int, float*)
           3              gld_transactions_per_request      Global Load Transactions Per Request    0.000000    0.000000    0.000000
           3              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
 	Kernel: cuda_compute_step_factor(int, float*, float*, float*)
-        518              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-        518              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+        526              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
+        526              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
 	Kernel: cuda_time_step(int, int, float*, float*, float*, float*)
-       1553              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-       1553              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+       1577              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
+       1577              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
 	Kernel: cuda_compute_flux(int, int*, float*, float*, float*)
-       1553              gld_transactions_per_request      Global Load Transactions Per Request    6.341924    6.341924    6.341924
-       1553              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+       1577              gld_transactions_per_request      Global Load Transactions Per Request    6.341924    6.341924    6.341924
+       1577              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000

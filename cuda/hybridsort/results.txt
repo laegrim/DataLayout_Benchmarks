@@ -1,8 +1,8 @@
-==13891== NVPROF is profiling process 13891, command: ./hybridsort r
-==13891== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==13891== Profiling application: ./hybridsort r
-==13891== Profiling result:
-==13891== Metric result:
+==20027== NVPROF is profiling process 20027, command: ./hybridsort r
+==20027== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==20027== Profiling application: ./hybridsort r
+==20027== Profiling result:
+==20027== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla K40c (0)"
 	Kernel: mergeSortFirst(float4*, int)
