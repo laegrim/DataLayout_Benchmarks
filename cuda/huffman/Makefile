@@ -1,3 +1,5 @@
+include ../../common/make.config
+
 CC = g++
 
 CUDA_INCLUDEPATH=/usr/local/cuda/include
