@@ -9,7 +9,6 @@ CC = gcc
 CC_FLAGS = -g -O3 -Wall -I$(MATRIX_DIR)
 
 # CUDA compiler
-NVCC = $(CUDA_DIR)/bin/nvcc
 NVCC_FLAGS = -I$(CUDA_DIR)/include -I$(SDK_DIR)/common/inc
 NVCC_FLAGS += $(CL_NVCC_FLAGS)
 
@@ -39,10 +38,10 @@ detect_main.o: detect_main.c find_ellipse.h track_ellipse.h avilib.h
 	$(CC) $(CC_FLAGS) detect_main.c -c
 
 find_ellipse_kernel.o: find_ellipse_kernel.cu find_ellipse_kernel.h
-	$(NVCC) $(NVCC_FLAGS) -c find_ellipse_kernel.cu
+	$(CUDA_CC) $(NVCC_FLAGS) -c find_ellipse_kernel.cu
 
 track_ellipse_kernel.o: track_ellipse_kernel.cu track_ellipse_kernel.h
-	$(NVCC) $(NVCC_FLAGS) -I$(MATRIX_DIR) -c track_ellipse_kernel.cu
+	$(CUDA_CC) $(NVCC_FLAGS) -I$(MATRIX_DIR) -c track_ellipse_kernel.cu
 
 find_ellipse.o: avilib.h
 

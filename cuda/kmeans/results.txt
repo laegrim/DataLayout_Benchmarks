@@ -1,8 +1,8 @@
-==16011== NVPROF is profiling process 16011, command: ./kmeans -o -i ../../data/kmeans/kdd_cup 
-==16011== Some kernel(s) will be replayed on device 1 in order to collect all events/metrics.
-==16011== Profiling application: ./kmeans -o -i ../../data/kmeans/kdd_cup 
-==16011== Profiling result:
-==16011== Metric result:
+==13730== NVPROF is profiling process 13730, command: ./kmeans -o -i ../../data/kmeans/kdd_cup 
+==13730== Some kernel(s) will be replayed on device 1 in order to collect all events/metrics.
+==13730== Profiling application: ./kmeans -o -i ../../data/kmeans/kdd_cup 
+==13730== Profiling result:
+==13730== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Quadro K620 (1)"
 	Kernel: invert_mapping(float*, float*, int, int)

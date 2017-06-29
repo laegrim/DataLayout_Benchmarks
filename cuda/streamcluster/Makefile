@@ -1,7 +1,5 @@
 include ../../common/make.config
 
-NVCC = $(CUDA_DIR)/bin/nvcc
-
 NVCC_FLAGS = -I$(CUDA_DIR)/include
 NVCC_FLAGS += $(CL_NVCC_FLAGS)
 
@@ -27,7 +25,7 @@ endif
 
 
 $(TARGET_G): streamcluster_cuda_cpu.cpp streamcluster_cuda.cu streamcluster_header.cu
-	$(NVCC) $(NVCC_FLAGS) streamcluster_cuda_cpu.cpp streamcluster_cuda.cu streamcluster_header.cu -o $(TARGET_G) -lcuda
+	$(CUDA_CC) $(NVCC_FLAGS) streamcluster_cuda_cpu.cpp streamcluster_cuda.cu streamcluster_header.cu -o $(TARGET_G) -lcuda
 	
 
 clean:

@@ -1,7 +1,5 @@
 include ../../../common/make.config
 
-CC := $(CUDA_DIR)/bin/nvcc
-
 INCLUDE := $(CUDA_DIR)/include
 
 # Example
@@ -15,7 +13,7 @@ INCLUDE := $(CUDA_DIR)/include
 
 # link objects(binaries) together
 a.out:		main.o
-	$(CC)	main.o \
+	$(CUDA_CC)	main.o \
 				-I$(INCLUDE) \
 				-L$(CUDA_LIB_DIR)  \
 				-lm -lcuda -lcudart -o srad
@@ -30,7 +28,7 @@ main.o: 	main.cu \
 				srad_kernel.cu \
 				srad2_kernel.cu \
 				compress_kernel.cu
-	nvcc	main.cu \
+	$(CUDA_CC)	main.cu \
 				-c -O3 -arch sm_35 $(CL_NVCC_FLAGS)
 
 # delete all object files

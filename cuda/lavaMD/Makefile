@@ -16,7 +16,6 @@ C_C = gcc
 OMP_LIB = -lgomp
 OMP_FLAG = -fopenmp
 
-CUD_C = $(CUDA_DIR)/bin/nvcc
 # OMP_FLAG = 	-Xcompiler paste_one_here
 CUDA_FLAG = -arch sm_35
 CUDA_FLAG += $(CL_NVCC_FLAGS)
@@ -56,7 +55,7 @@ main.o:		main.h \
 
 ./kernel/kernel_gpu_cuda_wrapper.o:	./kernel/kernel_gpu_cuda_wrapper.h \
 									./kernel/kernel_gpu_cuda_wrapper.cu
-	$(CUD_C) $(KERNEL_DIM)						./kernel/kernel_gpu_cuda_wrapper.cu \
+	$(CUDA_CC) $(KERNEL_DIM)						./kernel/kernel_gpu_cuda_wrapper.cu \
 									-c \
 									-o ./kernel/kernel_gpu_cuda_wrapper.o \
 									-O3 \
@@ -78,7 +77,7 @@ main.o:		main.h \
 
 ./util/device/device.o:	./util/device/device.h \
 						./util/device/device.cu
-	$(CUD_C)			./util/device/device.cu \
+	$(CUDA_CC)			./util/device/device.cu \
 						-c \
 						-o ./util/device/device.o \
 						-O3

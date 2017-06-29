@@ -5,7 +5,6 @@ CC = gcc
 CC_FLAGS = -g -fopenmp -O2 
 
 # CUDA compiler
-NVCC = $(CUDA_DIR)/bin/nvcc
 NVCC_FLAGS = -I$(CUDA_DIR)/include 
 NVCC_FLAGS += $(CL_NVCC_FLAGS)
 
@@ -29,7 +28,7 @@ kmeans: cluster.o getopt.o kmeans.o kmeans_clustering.o kmeans_cuda.o rmse.o
 	$(CC) $(CC_FLAGS) $< -c
 
 kmeans_cuda.o: kmeans_cuda.cu 
-	$(NVCC) $(NVCC_FLAGS) -c kmeans_cuda.cu
+	$(CUDA_CC) $(NVCC_FLAGS) -c kmeans_cuda.cu
 
 clean:
 	rm -f *.o *~ kmeans kmeans_cuda.linkinfo

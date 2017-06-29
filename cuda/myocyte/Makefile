@@ -9,7 +9,7 @@
 
 # link objects(binaries) together
 myocyte.out:		main.o
-	nvcc	main.o \
+	$(CUDA_CC)	main.o \
 				-I/usr/local/cuda/include \
 				-L/usr/local/cuda/lib \
 				-lm -lcuda -lcudart \
@@ -35,7 +35,7 @@ main.o:	define.c \
 				kernel_fin_2.cu \
 				file.c \
 				timer.c
-	nvcc	main.cu \
+	$(CUDA_CC)	main.cu \
 				-c -O3 -g $(CL_NVCC_FLAGS)
 
 # delete all object files

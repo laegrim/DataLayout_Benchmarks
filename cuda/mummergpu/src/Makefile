@@ -7,8 +7,7 @@ include ../experiments/test_rule.mk
 
 CUDA_INSTALL_PATH := $(CUDA_DIR)
 
-# Compilers
-NVCC       := $(CUDA_INSTALL_PATH)/bin/nvcc 
+# Compilers 
 CXX        := g++ -fopenmp $(PROFILE)
 CC         := gcc 
 LINK       := g++ -fopenmp -m64 -fPIC $(PROFILE)
@@ -116,15 +115,15 @@ $(OBJDIR)/%.cpp_o : $(SRCDIR)%.cpp
 
 #.cu.cu_$(APPEND)_o:
 $(OBJDIR)/%.cu_o : $(SRCDIR)%.cu
-	$(NVCC) -o $@ -c $< $(NVCCFLAGS)
+	$(CUDA_CC) -o $@ -c $< $(NVCCFLAGS)
 
 #.cu.cubin
 %.cubin : $(SRCDIR)mummergpu.cu mummergpu_kernel.cu
-	$(NVCC) -o $(BINNAME).cubin -cubin $< $(NVCCFLAGS)
+	$(CUDA_CC) -o $(BINNAME).cubin -cubin $< $(NVCCFLAGS)
 
 #.cu.ptx
 %.ptx : $(SRCDIR)%.cu mummergpu_kernel.cu
-	$(NVCC) -o $@ -ptx -Xopencc -LIST:source=on $< $(NVCCFLAGS)
+	$(CUDA_CC) -o $@ -ptx -Xopencc -LIST:source=on $< $(NVCCFLAGS)
 
 makedirectories:
 	@mkdir -p $(LIBDIR)

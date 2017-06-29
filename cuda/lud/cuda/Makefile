@@ -1,5 +1,6 @@
+include ../../../common/make.config
+
 CC = gcc
-NVCC = nvcc
 
 DEFS += \
 		-DGPU_TIMER \
@@ -31,14 +32,14 @@ OBJS = ../common/common.o lud.o lud_kernel.o
 all : $(EXECUTABLE)
 
 .c.o : 
-	$(NVCC) $(KERNEL_DIM) $(NVCCFLAGS) $(DEFS) -o $@ -c $<
+	$(CUDA_CC) $(KERNEL_DIM) $(NVCCFLAGS) $(DEFS) -o $@ -c $<
 
 %.o:	%.cu 
-	$(NVCC) $(KERNEL_DIM) $(NVCCFLAGS) $(DEFS) -o $@ -c $<
+	$(CUDA_CC) $(KERNEL_DIM) $(NVCCFLAGS) $(DEFS) -o $@ -c $<
 
 
 $(EXECUTABLE) : $(OBJS)
-	$(NVCC) $(NVCCFLAGS) -o $@  $?
+	$(CUDA_CC) $(NVCCFLAGS) -o $@  $?
 
 clean:
 	rm -f $(EXECUTABLE) $(OBJS) *.linkinfo

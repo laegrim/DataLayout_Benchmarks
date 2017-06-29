@@ -1,8 +1,8 @@
-==15505== NVPROF is profiling process 15505, command: ./hotspot 512 2 2 ../../data/hotspot/temp_512 ../../data/hotspot/power_512 output.out
-==15505== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==15505== Profiling application: ./hotspot 512 2 2 ../../data/hotspot/temp_512 ../../data/hotspot/power_512 output.out
-==15505== Profiling result:
-==15505== Metric result:
+==10934== NVPROF is profiling process 10934, command: ./hotspot 512 2 2 ../../data/hotspot/temp_512 ../../data/hotspot/power_512 output.out
+==10934== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==10934== Profiling application: ./hotspot 512 2 2 ../../data/hotspot/temp_512 ../../data/hotspot/power_512 output.out
+==10934== Profiling result:
+==10934== Metric result:
 Invocations                               Metric Name                        Metric Description         Min         Max         Avg
 Device "Tesla K40c (0)"
 	Kernel: calculate_temp(int, float*, float*, float*, int, int, int, int, float, float, float, float, float, float)

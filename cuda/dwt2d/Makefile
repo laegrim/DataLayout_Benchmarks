@@ -86,7 +86,6 @@ OUTPUT = -DOUTPUT
 CXX := g++
 CC := gcc
 LINK := g++ -fPIC
-NVCC := $(CUDA_INSTALL_PATH)/bin/nvcc
 
 # Generate object files list
 COBJS=$(CFILES:.c=.c.o)
@@ -99,7 +98,7 @@ CUOBJS=$(CUFILES:.cu=.cu.o)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 %.cu.o: %.cu
-	$(NVCC) $(OUTPUT) $(NVCCFLAGS) -c $< -o $@
+	$(CUDA_CC) $(OUTPUT) $(NVCCFLAGS) -c $< -o $@
 
 %.cpp.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@

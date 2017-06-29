@@ -1,4 +1,3 @@
-NVCC=nvcc
 CC = g++
 
 CUDA_INCLUDEPATH=/usr/local/cuda/include
@@ -21,22 +20,22 @@ override TESTING = -DCACHECWLUT
 endif
 
 pavle: $(OBJ) 
-	$(NVCC) $(TESTING) $(CACHECWLUT) $(NVCC_OPTS) $(OBJ) -o $(EXE) 
+	$(CUDA_CC) $(TESTING) $(CACHECWLUT) $(NVCC_OPTS) $(OBJ) -o $(EXE) 
 
 vlc_kernel_sm64huff.o: vlc_kernel_sm64huff.cu 
-	$(NVCC) $(TESTING) -c vlc_kernel_sm64huff.cu $(NVCC_OPTS)
+	$(CUDA_CC) $(TESTING) -c vlc_kernel_sm64huff.cu $(NVCC_OPTS)
 
 scan.o: scan.cu 
-	$(NVCC) -c scan.cu $(NVCC_OPTS)
+	$(CUDA_CC) -c scan.cu $(NVCC_OPTS)
 
 #cpuencode.o: cpuencode.cu
-#	$(NVCC) -c $(NVCC_OPTS) cpuencode.cu
+#	$(CUDA_CC) -c $(NVCC_OPTS) cpuencode.cu
 
 pack_kernels.o: pack_kernels.cu 
-	$(NVCC) -c pack_kernels.cu $(NVCC_OPTS)
+	$(CUDA_CC) -c pack_kernels.cu $(NVCC_OPTS)
 
 main_test_cu.o: main_test_cu.cu cutil.h
-	$(NVCC) $(TESTING) -c main_test_cu.cu $(NVCC_OPTS) -I $(CUDA_INCLUDEPATH) 
+	$(CUDA_CC) $(TESTING) -c main_test_cu.cu $(NVCC_OPTS) -I $(CUDA_INCLUDEPATH) 
 
 .o:.cpp
 	$(CC) ++ $(GCC_OPTS) -c $@ -o $<
