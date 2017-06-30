@@ -1,13 +1,46 @@
-==4101== NVPROF is profiling process 4101, command: ./kmeans -o -i ../../data/kmeans/kdd_cup 
-==4101== Some kernel(s) will be replayed on device 1 in order to collect all events/metrics.
-==4101== Profiling application: ./kmeans -o -i ../../data/kmeans/kdd_cup 
-==4101== Profiling result:
-==4101== Metric result:
-Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+==21614== NVPROF is profiling process 21614, command: ./kmeans -o -i ../../data/kmeans/kdd_cup 
+==21614== Profiling application: ./kmeans -o -i ../../data/kmeans/kdd_cup 
+==21614== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  35.47  11.48342         5  2.296684  7.99e-04  10.84485  [CUDA memcpy HtoD]
+  32.16  10.41362         2  5.206812  5.186284  5.227340  kmeansPoint(float*, int, int, int, int*, float*, float*, int*)
+  30.51  9.879779         1  9.879779  9.879779  9.879779  invert_mapping(float*, float*, int, int)
+   1.86  0.601970         2  0.300985  0.300953  0.301017  [CUDA memcpy DtoH]
+
+==21614== System profiling result:
+Device "Tesla K40c (0)"
+                         Count         Avg         Min         Max
+      SM Clock (MHz)        14      745.00      745.00      745.00
+  Memory Clock (MHz)        14     3004.00     3004.00     3004.00
+     Temperature (C)        28       47.00       47.00       47.00
+          Power (mW)        28    64047.32    63753.00    67157.00
+             Fan (%)        14       24.00       24.00       24.00
 Device "Quadro K620 (1)"
-	Kernel: invert_mapping(float*, float*, int, int)
-          1              gld_transactions_per_request      Global Load Transactions Per Request   31.998186   31.998186   31.998186
-          1              gst_transactions_per_request     Global Store Transactions Per Request    4.499773    4.499773    4.499773
-	Kernel: kmeansPoint(float*, int, int, int, int*, float*, float*, int*)
-          2              gld_transactions_per_request      Global Load Transactions Per Request    0.000000    0.000000    0.000000
-          2              gst_transactions_per_request     Global Store Transactions Per Request    3.999806    3.999806    3.999806
+                         Count         Avg         Min         Max
+      SM Clock (MHz)        14     1058.00     1058.00     1058.00
+  Memory Clock (MHz)        14      900.00      900.00      900.00
+     Temperature (C)        28       52.50       52.00       53.00
+          Power (mW)        28     3665.04     3588.00     4494.00
+             Fan (%)        14       39.00       39.00       39.00
+
+==21614== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  82.93  164.1998         4  41.04995  0.259809  162.6293  cudaMalloc
+  10.31  20.40811         7  2.915444  0.204216  10.80494  cudaMemcpy
+   5.27  10.42856         2  5.214281  5.192211  5.236351  cudaThreadSynchronize
+   0.97  1.930131       166  0.011627  6.99e-04  0.458089  cuDeviceGetAttribute
+   0.24  0.480788         4  0.120197  0.088070  0.177955  cudaFree
+   0.09  0.187873         2  0.093936  0.091911  0.095962  cuDeviceTotalMem
+   0.08  0.158610         2  0.079305  0.068794  0.089816  cuDeviceGetName
+   0.06  0.123897         3  0.041299  0.031777  0.052660  cudaLaunch
+   0.01  0.019353        20  9.67e-04  6.98e-04  3.42e-03  cudaSetupArgument
+   0.01  0.018788         6  3.13e-03  1.96e-03  6.01e-03  cudaBindTexture
+   0.01  0.015017         3  5.00e-03  2.03e-03  9.57e-03  cudaSetDevice
+   0.00  7.54e-03         2  3.77e-03  3.63e-03  3.91e-03  cuDeviceGetPCIBusId
+   0.00  4.05e-03         4  1.01e-03  7.68e-04  1.47e-03  cuDeviceGet
+   0.00  3.84e-03         6  6.40e-04  6.29e-04  6.98e-04  cudaCreateChannelDesc
+   0.00  3.21e-03         3  1.07e-03  7.69e-04  1.54e-03  cudaConfigureCall
+   0.00  2.31e-03         2  1.15e-03  1.12e-03  1.19e-03  cudaMemcpyToSymbol
+   0.00  2.24e-03         2  1.12e-03  9.78e-04  1.26e-03  cuDeviceGetCount

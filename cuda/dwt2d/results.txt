@@ -1,19 +1,54 @@
-==19379== NVPROF is profiling process 19379, command: ./dwt2d rgb.bmp -d 1024x1024 -f -5 -l 3
-==19379== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==19379== Profiling application: ./dwt2d rgb.bmp -d 1024x1024 -f -5 -l 3
-==19379== Profiling result:
-==19379== Metric result:
-Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+==21556== NVPROF is profiling process 21556, command: ./dwt2d rgb.bmp -d 1024x1024 -f -5 -l 3
+==21556== Profiling application: ./dwt2d rgb.bmp -d 1024x1024 -f -5 -l 3
+==21556== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  48.80  1.223055         3  0.407685  0.405765  0.408997  [CUDA memcpy DtoH]
+  13.33  0.333987         3  0.111329  0.110913  0.111553  void dwt_cuda::fdwt53Kernel<int=192, int=8>(int const *, int*, int, int, int)
+  12.32  0.308707         1  0.308707  0.308707  0.308707  [CUDA memcpy HtoD]
+   8.58  0.215011         9  0.023890  6.43e-03  0.050785  [CUDA memcpy DtoD]
+   6.58  0.164866         8  0.020608  0.015969  0.022112  [CUDA memset]
+   4.32  0.108227         3  0.036075  0.035873  0.036289  void dwt_cuda::fdwt53Kernel<int=128, int=8>(int const *, int*, int, int, int)
+   3.40  0.085153         1  0.085153  0.085153  0.085153  void c_CopySrcToComponents<int>(int*, int*, int*, unsigned char*, int)
+   2.69  0.067296         3  0.022432  0.022336  0.022496  void dwt_cuda::fdwt53Kernel<int=64, int=8>(int const *, int*, int, int, int)
+
+==21556== System profiling result:
 Device "Tesla K40c (0)"
-	Kernel: void dwt_cuda::fdwt53Kernel<int=128, int=8>(int const *, int*, int, int, int)
-          3              gld_transactions_per_request      Global Load Transactions Per Request    1.200000    1.200000    1.200000
-          3              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: void dwt_cuda::fdwt53Kernel<int=192, int=8>(int const *, int*, int, int, int)
-          3              gld_transactions_per_request      Global Load Transactions Per Request    1.238095    1.238095    1.238095
-          3              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: void dwt_cuda::fdwt53Kernel<int=64, int=8>(int const *, int*, int, int, int)
-          3              gld_transactions_per_request      Global Load Transactions Per Request    1.333333    1.333333    1.333333
-          3              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: void c_CopySrcToComponents<int>(int*, int*, int*, unsigned char*, int)
-          1              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         3      745.00      745.00      745.00
+  Memory Clock (MHz)         3     3004.00     3004.00     3004.00
+     Temperature (C)         4       48.00       48.00       48.00
+          Power (mW)         4    65267.25    63941.00    67634.00
+             Fan (%)         3       24.00       24.00       24.00
+Device "Quadro K620 (1)"
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         3     1058.00     1058.00     1058.00
+  Memory Clock (MHz)         3      900.00      900.00      900.00
+     Temperature (C)         4       52.50       52.00       53.00
+          Power (mW)         4     3759.50     3750.00     3769.00
+             Fan (%)         3       39.00       39.00       39.00
+
+==21556== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  96.09  239.3158         4  59.82894  1.078419  235.7525  cudaMallocHost
+   1.03  2.569809         4  0.642452  0.532609  0.703232  cudaFreeHost
+   0.76  1.890876       166  0.011390  7.68e-04  0.437485  cuDeviceGetAttribute
+   0.70  1.739956        13  0.133842  9.85e-03  0.433644  cudaMemcpy
+   0.43  1.083310         8  0.135413  0.129137  0.157213  cudaMalloc
+   0.35  0.866101         1  0.866101  0.866101  0.866101  cudaGetDeviceProperties
+   0.34  0.858068         8  0.107258  0.098965  0.127041  cudaFree
+   0.07  0.184171         2  0.092085  0.090514  0.093657  cuDeviceTotalMem
+   0.05  0.121944         8  0.015243  0.013270  0.023606  cudaMemset
+   0.04  0.111955         2  0.055977  0.045047  0.066908  cuDeviceGetName
+   0.04  0.109512        10  0.010951  8.59e-03  0.021581  cudaLaunch
+   0.04  0.097149         3  0.032383  4.75e-03  0.085486  cudaThreadSynchronize
+   0.02  0.044001        42  1.05e-03  6.99e-04  8.80e-03  cudaGetLastError
+   0.02  0.038970        50  7.79e-04  6.98e-04  1.26e-03  cudaSetupArgument
+   0.00  9.01e-03        10  9.01e-04  7.68e-04  1.26e-03  cudaConfigureCall
+   0.00  7.40e-03         2  3.70e-03  3.56e-03  3.84e-03  cuDeviceGetPCIBusId
+   0.00  4.26e-03         1  4.26e-03  4.26e-03  4.26e-03  cudaSetDevice
+   0.00  3.98e-03         4  9.95e-04  7.68e-04  1.26e-03  cuDeviceGet
+   0.00  2.37e-03         2  1.19e-03  1.05e-03  1.33e-03  cuDeviceGetCount
+   0.00  1.12e-03         1  1.12e-03  1.12e-03  1.12e-03  cudaGetDeviceCount
+==21556== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.

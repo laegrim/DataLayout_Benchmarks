@@ -1,25 +1,47 @@
-==4136== NVPROF is profiling process 4136, command: ./srad 100 0.5 502 458
-==4136== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==4136== Profiling application: ./srad 100 0.5 502 458
-==4136== Profiling result:
-==4136== Metric result:
-Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+==20984== NVPROF is profiling process 20984, command: ./srad 100 0.5 502 458
+==20984== Profiling application: ./srad 100 0.5 502 458
+==20984== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  47.01  10.28676       200  0.051433  0.045761  0.057377  reduce(long, int, int, float*, float*)
+  23.79  5.204890       100  0.052048  0.051425  0.053569  srad(float, int, int, long, int*, int*, int*, int*, float*, float*, float*, float*, float, float*, float*)
+  18.48  4.042823       100  0.040428  0.039937  0.040961  srad2(float, int, int, long, int*, int*, int*, int*, float*, float*, float*, float*, float*, float*)
+   7.94  1.736792       100  0.017367  0.016000  0.017761  prepare(long, float*, float*, float*)
+   2.21  0.483270       201  2.40e-03  1.92e-03  0.089377  [CUDA memcpy DtoH]
+   0.44  0.096897         5  0.019379  1.15e-03  0.092129  [CUDA memcpy HtoD]
+   0.07  0.015712         1  0.015712  0.015712  0.015712  compress(long, float*)
+   0.07  0.015424         1  0.015424  0.015424  0.015424  extract(long, float*)
+
+==20984== System profiling result:
 Device "Tesla K40c (0)"
-	Kernel: compress(long, float*)
-          1              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: reduce(long, int, int, float*, float*)
-        200              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    3.081340    2.040670
-        200              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: srad2(float, int, int, long, int*, int*, int*, int*, float*, float*, float*, float*, float*, float*)
-        100              gld_transactions_per_request      Global Load Transactions Per Request    1.294920    1.294920    1.294920
-        100              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: extract(long, float*)
-          1              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: prepare(long, float*, float*, float*)
-        100              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-        100              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: srad(float, int, int, long, int*, int*, int*, int*, float*, float*, float*, float*, float, float*, float*)
-        100              gld_transactions_per_request      Global Load Transactions Per Request    1.655378    1.655378    1.655378
-        100              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         3      745.00      745.00      745.00
+  Memory Clock (MHz)         3     3004.00     3004.00     3004.00
+     Temperature (C)         6       43.67       43.00       44.00
+          Power (mW)         6    72265.67    63566.00    86370.00
+             Fan (%)         3       23.00       23.00       23.00
+Device "Quadro K620 (1)"
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         3     1058.00     1058.00     1058.00
+  Memory Clock (MHz)         3      900.00      900.00      900.00
+     Temperature (C)         6       50.00       50.00       50.00
+          Power (mW)         6     3430.00     3428.00     3434.00
+             Fan (%)         3       36.00       36.00       36.00
+
+==20984== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  89.30  243.8670        12  20.32225  7.61e-03  242.7673  cudaMalloc
+   6.24  17.04589       206  0.082747  8.59e-03  0.284604  cudaMemcpy
+   1.27  3.478297       502  6.93e-03  5.73e-03  0.043301  cudaLaunch
+   1.19  3.259013      4304  7.57e-04  6.98e-04  8.52e-03  cudaSetupArgument
+   0.76  2.063740        12  0.171978  6.91e-03  0.622006  cudaFree
+   0.68  1.855474       166  0.011177  7.68e-04  0.444051  cuDeviceGetAttribute
+   0.31  0.837730      1104  7.58e-04  6.98e-04  2.24e-03  cudaGetLastError
+   0.14  0.378677       502  7.54e-04  6.98e-04  1.47e-03  cudaConfigureCall
+   0.07  0.184101         2  0.092050  0.090514  0.093587  cuDeviceTotalMem
+   0.04  0.110698         2  0.055349  0.045327  0.065371  cuDeviceGetName
+   0.00  7.33e-03         2  3.67e-03  3.63e-03  3.70e-03  cuDeviceGetPCIBusId
+   0.00  3.98e-03         4  9.95e-04  7.68e-04  1.26e-03  cuDeviceGet
+   0.00  2.51e-03         2  1.26e-03  9.07e-04  1.61e-03  cuDeviceGetCount
+==20984== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.

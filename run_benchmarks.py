@@ -29,22 +29,22 @@ benchmarks = ['backprop',
               'heartwall',
               'hotspot',
               'hotspot3D',
-              'huffman',
+              #'huffman',
               'hybridsort',
               'kmeans',
               'lavaMD',
               'leukocyte/CUDA',
-              'leukocyte',
+              #'leukocyte',
               'lud',
               'myocyte',
               'nn',
               'nw',
               'particlefilter',
-              'pathfinder',
+              #'pathfinder',
               'srad/srad_v1',
               'srad/srad_v2',
               'streamcluster',
-              'mummergpu',
+              #'mummergpu',
              ]
 
 def get_default_run(benchmarks, benchmarks_base):
@@ -87,19 +87,19 @@ def get_power_stats(benchmark_dir):
 
     time.sleep(2)
     time_line = [line for line in grep("Time(%)", "-m", "1", "-A", "2", "results.txt").stdout.decode('utf-8').split('\n')]
-    time_line = [stat for stat in line[2].split(' ') if stat != '']
+    time_line = [stat for stat in time_line[2].split(' ') if stat != '']
     power_line = [stat for stat in grep("Power", "results.txt").stdout.decode('utf-8').split('\n')[0].split(' ') if stat != '']
     device = grep("Device", "-m", "1", "results.txt").stdout.decode('utf-8').split('\n')[0]
 
     results = {
-        'total_time':float(line[1])/(float(line[0])/100.0),
-        'top_kernel_time_pecent':float(line[0]),
-        'top_kernel_time_ms':float(line[1]),
-        'top_kernel_calls':int(line[2]),
-        'top_kernel_avg':float(line[3]),
-        'top_kernel_min':float(line[4]),
-        'top_kernel_max':float(line[5]),
-        'top_kernel_sig':' '.join(line[6:-1]),
+        'total_time':float(time_line[1])/(float(time_line[0])/100.0),
+        'top_kernel_time_percent':float(time_line[0]),
+        'top_kernel_time_ms':float(time_line[1]),
+        'top_kernel_calls':int(time_line[2]),
+        'top_kernel_avg':float(time_line[3]),
+        'top_kernel_min':float(time_line[4]),
+        'top_kernel_max':float(time_line[5]),
+        'top_kernel_sig':' '.join(time_line[6:-1]),
         'device':device,
         'power_profiling_count':int(power_line[2]),
         'avg_mW':float(power_line[3]),
@@ -126,9 +126,9 @@ def run_benchmarks(benchmarks, benchmarks_base, timeout):
             print(benchmarks_base['args_base'] + run)
             try:
                 run_benchmark(benchmark_dir, benchmarks_base['args_base'] + [run], timeout)
-                #results = get_mem_divergence(benchmark_dir)
-                results = get_power_stats(benchmark_dir)
-                results[benchmark_dir].append((run, results))
+                #result = get_mem_divergence(benchmark_dir)
+                result = get_power_stats(benchmark_dir)
+                results[benchmark_dir].append((run, result))
             except ErrorReturnCode as err:
                 print(err)
     return results

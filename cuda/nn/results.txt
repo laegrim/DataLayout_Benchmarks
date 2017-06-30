@@ -1,10 +1,43 @@
-==2653== NVPROF is profiling process 2653, command: ./nn filelist_4 -r 5 -lat 30 -lng 90
-==2653== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==2653== Profiling application: ./nn filelist_4 -r 5 -lat 30 -lng 90
-==2653== Profiling result:
-==2653== Metric result:
-Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+==21218== NVPROF is profiling process 21218, command: ./nn filelist_4 -r 5 -lat 30 -lng 90
+==21218== Profiling application: ./nn filelist_4 -r 5 -lat 30 -lng 90
+==21218== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  60.00  0.035808         1  0.035808  0.035808  0.035808  [CUDA memcpy HtoD]
+  31.26  0.018657         1  0.018657  0.018657  0.018657  [CUDA memcpy DtoH]
+   8.74  5.22e-03         1  5.22e-03  5.22e-03  5.22e-03  euclid(latLong*, float*, int, float, float)
+
+==21218== System profiling result:
 Device "Tesla K40c (0)"
-	Kernel: euclid(latLong*, float*, int, float, float)
-          1              gld_transactions_per_request      Global Load Transactions Per Request    1.999252    1.999252    1.999252
-          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         3      745.00      745.00      745.00
+  Memory Clock (MHz)         3     3004.00     3004.00     3004.00
+     Temperature (C)         4       46.00       46.00       46.00
+          Power (mW)         4    65568.75    63752.00    69411.00
+             Fan (%)         3       24.00       24.00       24.00
+Device "Quadro K620 (1)"
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         3     1058.00     1058.00     1058.00
+  Memory Clock (MHz)         3      900.00      900.00      900.00
+     Temperature (C)         4       52.00       52.00       52.00
+          Power (mW)         4     3659.00     3655.00     3663.00
+             Fan (%)         3       38.00       38.00       38.00
+
+==21218== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  98.46  221.0459         3  73.68197  3.63e-03  221.0255  cudaThreadSynchronize
+   0.73  1.639368       166  9.88e-03  6.28e-04  0.353955  cuDeviceGetAttribute
+   0.35  0.774889         1  0.774889  0.774889  0.774889  cudaGetDeviceProperties
+   0.12  0.269867         2  0.134933  0.128089  0.141778  cudaMalloc
+   0.11  0.240184         2  0.120092  0.108463  0.131721  cudaFree
+   0.08  0.186546         2  0.093273  0.060692  0.125854  cudaMemcpy
+   0.07  0.163359         2  0.081679  0.076616  0.086743  cuDeviceTotalMem
+   0.04  0.099035         2  0.049517  0.042813  0.056222  cuDeviceGetName
+   0.02  0.050704         1  0.050704  0.050704  0.050704  cudaMemGetInfo
+   0.01  0.022070         1  0.022070  0.022070  0.022070  cudaLaunch
+   0.00  4.68e-03         5  9.36e-04  6.99e-04  1.33e-03  cudaSetupArgument
+   0.00  4.26e-03         2  2.13e-03  2.03e-03  2.24e-03  cuDeviceGetPCIBusId
+   0.00  3.14e-03         4  7.85e-04  6.28e-04  1.05e-03  cuDeviceGet
+   0.00  1.75e-03         2  8.73e-04  7.68e-04  9.78e-04  cuDeviceGetCount
+   0.00  1.47e-03         1  1.47e-03  1.47e-03  1.47e-03  cudaConfigureCall

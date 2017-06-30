@@ -1,19 +1,46 @@
-==2827== NVPROF is profiling process 2827, command: ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
-==2827== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==2827== Profiling application: ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
-==2827== Profiling result:
-==2827== Metric result:
-Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+==21479== NVPROF is profiling process 21479, command: ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
+==21479== Profiling application: ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
+==21479== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  34.99  2.922691         9  0.324743  0.324548  0.324868  normalize_weights_kernel(double*, int, double*, double*, double*, int*)
+  33.98  2.837986         9  0.315331  0.172514  0.371108  find_index_kernel(double*, double*, double*, double*, double*, double*, double*, int)
+  30.25  2.526782         9  0.280753  0.278403  0.283043  likelihood_kernel(double*, double*, double*, double*, double*, int*, int*, double*, unsigned char*, double*, double*, int, int, int, int, int, int, int*, double*)
+   0.33  0.027968         6  4.66e-03  1.12e-03  0.018656  [CUDA memcpy HtoD]
+   0.28  0.023008         9  2.56e-03  2.53e-03  2.69e-03  sum_kernel(double*, int)
+   0.11  9.57e-03         3  3.19e-03  2.78e-03  3.62e-03  [CUDA memcpy DtoH]
+   0.06  5.15e-03         1  5.15e-03  5.15e-03  5.15e-03  [CUDA memset]
+
+==21479== System profiling result:
 Device "Tesla K40c (0)"
-	Kernel: sum_kernel(double*, int)
-          9              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-          9              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: likelihood_kernel(double*, double*, double*, double*, double*, int*, int*, double*, unsigned char*, double*, double*, int, int, int, int, int, int, int*, double*)
-          9              gld_transactions_per_request      Global Load Transactions Per Request    7.638774    9.303688    8.942141
-          9              gst_transactions_per_request     Global Store Transactions Per Request   27.825060   27.825060   27.825060
-	Kernel: normalize_weights_kernel(double*, int, double*, double*, double*, int*)
-          9              gld_transactions_per_request      Global Load Transactions Per Request    1.029894    1.029894    1.029894
-          9              gst_transactions_per_request     Global Store Transactions Per Request    1.058161    1.058161    1.058161
-	Kernel: find_index_kernel(double*, double*, double*, double*, double*, double*, double*, int)
-          9              gld_transactions_per_request      Global Load Transactions Per Request    1.001148    1.005110    1.002500
-          9              gst_transactions_per_request     Global Store Transactions Per Request    1.968750    1.968750    1.968750
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         3      745.00      745.00      745.00
+  Memory Clock (MHz)         3     3004.00     3004.00     3004.00
+     Temperature (C)         4       48.00       48.00       48.00
+          Power (mW)         4    67391.25    64130.00    73008.00
+             Fan (%)         3       25.00       25.00       25.00
+Device "Quadro K620 (1)"
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         3     1058.00     1058.00     1058.00
+  Memory Clock (MHz)         3      900.00      900.00      900.00
+     Temperature (C)         4       52.25       52.00       53.00
+          Power (mW)         4     3612.00     3609.00     3621.00
+             Fan (%)         3       39.00       39.00       39.00
+
+==21479== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  94.03  225.8061        13  17.36970  6.22e-03  225.2160  cudaMalloc
+   3.21  7.711665         1  7.711665  7.711665  7.711665  cudaThreadSynchronize
+   1.54  3.700471        13  0.284651  6.49e-03  2.517080  cudaFree
+   0.79  1.889626       166  0.011383  6.98e-04  0.451104  cuDeviceGetAttribute
+   0.11  0.259885        36  7.22e-03  5.24e-03  0.033105  cudaLaunch
+   0.10  0.238649       315  7.57e-04  6.98e-04  1.54e-03  cudaSetupArgument
+   0.08  0.188013         2  0.094006  0.092121  0.095892  cuDeviceTotalMem
+   0.07  0.178024         9  0.019780  9.43e-03  0.042952  cudaMemcpy
+   0.05  0.112096         2  0.056048  0.045886  0.066210  cuDeviceGetName
+   0.01  0.030309        36  8.41e-04  6.98e-04  2.03e-03  cudaConfigureCall
+   0.01  0.021930         1  0.021930  0.021930  0.021930  cudaMemset
+   0.00  7.47e-03         2  3.74e-03  3.70e-03  3.77e-03  cuDeviceGetPCIBusId
+   0.00  3.91e-03         4  9.77e-04  7.68e-04  1.33e-03  cuDeviceGet
+   0.00  2.86e-03         2  1.43e-03  1.05e-03  1.82e-03  cuDeviceGetCount

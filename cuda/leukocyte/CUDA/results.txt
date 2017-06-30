@@ -1,16 +1,52 @@
-==2972== NVPROF is profiling process 2972, command: ./leukocyte ../../../data/leukocyte/testfile.avi 10
-==2972== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==2972== Profiling application: ./leukocyte ../../../data/leukocyte/testfile.avi 10
-==2972== Profiling result:
-==2972== Metric result:
-Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+==21321== NVPROF is profiling process 21321, command: ./leukocyte ../../../data/leukocyte/testfile.avi 10
+==21321== Profiling application: ./leukocyte ../../../data/leukocyte/testfile.avi 10
+==21321== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  95.73  170.7980        10  17.07980  16.53084  17.60215  IMGVF_kernel(float**, float**, int*, int*, float, float, float, int, float)
+   2.22  3.955173         1  3.955173  3.955173  3.955173  GICOV_kernel(int, float*)
+   1.09  1.944306         1  1.944306  1.944306  1.944306  dilate_kernel(int, int, int, int, float*)
+   0.63  1.119338        67  0.016706  8.32e-04  0.056609  [CUDA memcpy HtoD]
+   0.33  0.592198        12  0.049349  0.047360  0.058049  [CUDA memcpy DtoH]
+   0.01  0.011232         1  0.011232  0.011232  0.011232  [CUDA memset]
+
+==21321== System profiling result:
 Device "Tesla K40c (0)"
-	Kernel: dilate_kernel(int, int, int, int, float*)
-          1              gld_transactions_per_request      Global Load Transactions Per Request    0.000000    0.000000    0.000000
-          1              gst_transactions_per_request     Global Store Transactions Per Request   29.333333   29.333333   29.333333
-	Kernel: IMGVF_kernel(float**, float**, int*, int*, float, float, float, int, float)
-         10              gld_transactions_per_request      Global Load Transactions Per Request    1.928299    1.956650    1.946734
-         10              gst_transactions_per_request     Global Store Transactions Per Request    1.913326    1.941590    1.935891
-	Kernel: GICOV_kernel(int, float*)
-          1              gld_transactions_per_request      Global Load Transactions Per Request    0.000000    0.000000    0.000000
-          1              gst_transactions_per_request     Global Store Transactions Per Request    1.879474    1.879474    1.879474
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         6      745.00      745.00      745.00
+  Memory Clock (MHz)         6     3004.00     3004.00     3004.00
+     Temperature (C)        11       46.00       46.00       46.00
+          Power (mW)        11    80129.73    63752.00    94435.00
+             Fan (%)         6       24.00       24.00       24.00
+Device "Quadro K620 (1)"
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         6     1058.00     1058.00     1058.00
+  Memory Clock (MHz)         6      900.00      900.00      900.00
+     Temperature (C)        11       52.00       52.00       52.00
+          Power (mW)        11     3619.55     3611.00     3630.00
+             Fan (%)         6       38.00       38.00       38.00
+
+==21321== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  54.68  228.5878        65  3.516735  7.33e-03  225.4815  cudaFree
+  42.28  176.7712        12  14.73093  1.954858  17.60783  cudaThreadSynchronize
+   1.09  4.544712        64  0.071011  6.22e-03  0.373511  cudaMalloc
+   1.03  4.307942        74  0.058215  6.22e-03  0.341175  cudaMemcpy
+   0.39  1.614597       166  9.73e-03  6.28e-04  0.365410  cuDeviceGetAttribute
+   0.36  1.495023         2  0.747511  0.734242  0.760781  cudaGetDeviceProperties
+   0.06  0.260299        12  0.021691  0.016902  0.054406  cudaLaunch
+   0.04  0.151905         2  0.075952  0.075429  0.076476  cuDeviceTotalMem
+   0.03  0.114750         2  0.057375  0.055245  0.059505  cuDeviceGetName
+   0.02  0.073824        97  7.61e-04  6.98e-04  1.12e-03  cudaSetupArgument
+   0.01  0.047770         5  9.55e-03  7.40e-03  0.016901  cudaMemcpyToSymbol
+   0.01  0.021371         1  0.021371  0.021371  0.021371  cudaMemset
+   0.00  0.012712        12  1.06e-03  9.77e-04  1.19e-03  cudaConfigureCall
+   0.00  0.012641         3  4.21e-03  2.24e-03  6.22e-03  cudaBindTexture
+   0.00  0.010756        12  8.96e-04  8.38e-04  9.78e-04  cudaGetLastError
+   0.00  5.87e-03         3  1.96e-03  1.19e-03  2.72e-03  cudaUnbindTexture
+   0.00  4.68e-03         2  2.34e-03  2.02e-03  2.65e-03  cuDeviceGetPCIBusId
+   0.00  4.54e-03         1  4.54e-03  4.54e-03  4.54e-03  cudaSetDevice
+   0.00  3.14e-03         4  7.85e-04  6.28e-04  9.78e-04  cuDeviceGet
+   0.00  1.75e-03         2  8.72e-04  8.38e-04  9.07e-04  cuDeviceGetCount
+   0.00  7.69e-04         1  7.69e-04  7.69e-04  7.69e-04  cudaGetDeviceCount

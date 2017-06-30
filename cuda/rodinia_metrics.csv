@@ -1,26 +1,26 @@
-,benchmark,run,gld_min,gld_avg,gld_max,gst_min,gst_avg,gst_max
-0,/home/st1289/rodinia_3.1/cuda/dwt2d,"['./dwt2d', '192.bmp', '-d', '192x192', '-f', '-5', '-l', '3']",1.333333,1.383838,1.484848,1.0,1.0,1.0
-1,/home/st1289/rodinia_3.1/cuda/dwt2d,"['./dwt2d', 'rgb.bmp', '-d', '1024x1024', '-f', '-5', '-l', '3']",1.2,1.2,1.2,1.0,1.0,1.0
-2,/home/st1289/rodinia_3.1/cuda/hotspot3D,"['./3D', '512', '8', '100', '../../data/hotspot3D/power_512x8', '../../data/hotspot3D/temp_512x8', 'output.out']",1.3125,1.3125,1.3125,1.0,1.0,1.0
-3,/home/st1289/rodinia_3.1/cuda/cfd,"['./euler3d', '../../data/cfd/fvcorr.domn.097K', '', '', '']",0.0,0.0,0.0,1.0,1.0,1.0
-4,/home/st1289/rodinia_3.1/cuda/cfd,"['./euler3d', '../../data/cfd/fvcorr.domn.193K', '', '', '']",0.0,0.0,0.0,1.0,1.0,1.0
-5,/home/st1289/rodinia_3.1/cuda/cfd,"['./euler3d', '../../data/cfd/missile.domn.0.2M', '', '']",0.0,0.0,0.0,1.0,1.0,1.0
-6,/home/st1289/rodinia_3.1/cuda/gaussian,"['./gaussian', '-f', '../../data/gaussian/matrix4.txt']",1.0,1.0,1.0,1.0,1.0,1.0
-7,/home/st1289/rodinia_3.1/cuda/gaussian,"['./gaussian', '-s', '16']",1.0,1.562963,2.05,4.266667,1.0,8.0
-8,/home/st1289/rodinia_3.1/cuda/hybridsort,"['./hybridsort', 'r']",0.0,0.0,0.0,1.0,1.0,1.0
-9,/home/st1289/rodinia_3.1/cuda/nw,"['./needle', '2048', '10']",1.842105,2.210526,2.578947,1.465551,1.0625,1.875
-10,/home/st1289/rodinia_3.1/cuda/srad/srad_v2,"['./srad', '2048', '2048', '0', '127', '0', '127', '0.5', '2']",1.599379,1.599379,1.599379,2.0,2.0,2.0
-11,/home/st1289/rodinia_3.1/cuda/nn,"['./nn', 'filelist_4', '-r', '5', '-lat', '30', '-lng', '90']",1.999252,1.999252,1.999252,1.0,1.0,1.0
-12,/home/st1289/rodinia_3.1/cuda/particlefilter,"['./particlefilter_naive', '-x', '128', '-y', '128', '-z', '10', '-np', '1000']",1.001573,1.002355,1.003294,1.96875,1.96875,1.96875
-13,/home/st1289/rodinia_3.1/cuda/particlefilter,"['./particlefilter_float', '-x', '128', '-y', '128', '-z', '10', '-np', '1000']",1.0,1.0,1.0,1.96875,1.96875,1.96875
-14,/home/st1289/rodinia_3.1/cuda/b+tree,"['./b+tree.out', 'file', '../../data/b+tree/mil.txt', 'command', '../../data/b+tree/command.txt']",1.318846,1.318846,1.318846,1.0,1.0,1.0
-15,/home/st1289/rodinia_3.1/cuda/leukocyte/CUDA,"['./leukocyte', '../../../data/leukocyte/testfile.avi', '10']",0.0,0.0,0.0,1.879474,1.879474,1.879474
-16,/home/st1289/rodinia_3.1/cuda/lavaMD,"['./lavaMD', '-boxes1d', '10']",4.620377,4.620377,4.620377,6.25,6.25,6.25
-17,/home/st1289/rodinia_3.1/cuda/hotspot,"['./hotspot', '512', '2', '2', '../../data/hotspot/temp_512', '../../data/hotspot/power_512', 'output.out']",2.930233,2.930233,2.930233,2.465116,2.465116,2.465116
-18,/home/st1289/rodinia_3.1/cuda/bfs,"['./bfs', '../../data/bfs/graph1MW_6.txt']",1.0,1.485664,3.488894,0.916667,0.0,1.0
-19,/home/st1289/rodinia_3.1/cuda/myocyte,"['./myocyte.out', '100', '1', '0']",1.0,1.0,1.0,1.0,1.0,1.0
-20,/home/st1289/rodinia_3.1/cuda/heartwall,"['./heartwall', '../../data/heartwall/test.avi', '20']",1.504981,1.643134,1.650407,4.520294,1.929505,4.657462
-21,/home/st1289/rodinia_3.1/cuda/streamcluster,"['./sc_gpu', '10', '20', '256', '65536', '65536', '1000', 'none', 'output.txt', '1']",1.04421,1.058956,1.084968,3.364325,1.494278,11.924
-22,/home/st1289/rodinia_3.1/cuda/kmeans,"['./kmeans', '-o', '-i', '../../data/kmeans/kdd_cup', '']",31.998186,31.998186,31.998186,3.999806,3.999806,3.999806
-23,/home/st1289/rodinia_3.1/cuda/backprop,"['./backprop', '65536']",1.53125,1.53125,1.53125,1.999969,1.999969,1.999969
-24,/home/st1289/rodinia_3.1/cuda/srad/srad_v1,"['./srad', '100', '0.5', '502', '458']",1.0,1.0,1.0,1.0,1.0,1.0
+,benchmark,run,total_time,top_kernel_time_percent,top_kernel_time_ms,top_kernel_calls,top_kernel_avg,top_kernel_min,top_kernel_max,top_kernel_sig,device,power_profiling_count,avg_mW,min_mW,max_mW
+0,/home/st1289/rodinia_3.1/cuda/lavaMD,"['./lavaMD', '-boxes1d', '10']",18.726313527452454,93.07,17.42858,1,17.42858,17.42858,17.42858,"kernel_gpu_cuda(par_str, dim_str, box_str*, FOUR_VECTOR*, double*,","Device ""Tesla K40c (0)""",4,65452.75,63566.0,70169.0
+1,/home/st1289/rodinia_3.1/cuda/nw,"['./needle', '2048', '10']",12.73534131349078,30.91,3.936494,2,1.968247,1.931223,2.005271,[CUDA memcpy,"Device ""Tesla K40c (0)""",4,65403.25,63562.0,69789.0
+2,/home/st1289/rodinia_3.1/cuda/gaussian,"['./gaussian', '-f', '../../data/gaussian/matrix4.txt']",0.026280164802825193,33.98,0.00893,3,0.00298,0.00237,0.00419,"Fan1(float*, float*, int,","Device ""Tesla K40c (0)""",4,65030.5,63657.0,68109.0
+3,/home/st1289/rodinia_3.1/cuda/gaussian,"['./gaussian', '-s', '16']",0.08400219298245613,45.6,0.038305,15,0.00255,0.00234,0.00355,"Fan1(float*, float*, int,","Device ""Tesla K40c (0)""",3,64352.67,63566.0,64983.0
+4,/home/st1289/rodinia_3.1/cuda/hotspot3D,"['./3D', '512', '8', '100', '../../data/hotspot3D/power_512x8', '../../data/hotspot3D/temp_512x8', 'output.out']",31.62380038387716,88.57,28.0092,100,0.280092,0.279298,0.282082,"hotspotOpt1(float*, float*, float*, float, int, int, int, float, float, float, float, float, float,","Device ""Tesla K40c (0)""",88,78095.38,63657.0,100698.0
+5,/home/st1289/rodinia_3.1/cuda/heartwall,"['./heartwall', '../../data/heartwall/test.avi', '20']",473.34254310779465,99.17,469.4138,20,23.47069,0.016384,24.72873,,"Device ""Tesla K40c (0)""",14,94961.29,63752.0,115269.0
+6,/home/st1289/rodinia_3.1/cuda/particlefilter,"['./particlefilter_naive', '-x', '128', '-y', '128', '-z', '10', '-np', '1000']",3.0498253598645215,94.48,2.881475,9,0.320163,0.278756,0.36298,"kernel(double*, double*, double*, double*, double*, double*,","Device ""Tesla K40c (0)""",4,65811.25,64130.0,69151.0
+7,/home/st1289/rodinia_3.1/cuda/particlefilter,"['./particlefilter_float', '-x', '128', '-y', '128', '-z', '10', '-np', '1000']",8.352932266361817,34.99,2.922691,9,0.324743,0.324548,0.324868,"normalize_weights_kernel(double*, int, double*, double*, double*,","Device ""Tesla K40c (0)""",4,67391.25,64130.0,73008.0
+8,/home/st1289/rodinia_3.1/cuda/hotspot,"['./hotspot', '512', '2', '2', '../../data/hotspot/temp_512', '../../data/hotspot/power_512', 'output.out']",0.42265679621632735,48.63,0.205538,2,0.102769,0.102561,0.102977,[CUDA memcpy,"Device ""Tesla K40c (0)""",8,70758.5,63752.0,77717.0
+9,/home/st1289/rodinia_3.1/cuda/b+tree,"['./b+tree.out', 'file', '../../data/b+tree/mil.txt', 'command', '../../data/b+tree/command.txt']",6.095874953294307,80.29,4.894378,15,0.326291,0.00486,2.26626,[CUDA memcpy,"Device ""Tesla K40c (0)""",35,64291.71,63847.0,71400.0
+10,/home/st1289/rodinia_3.1/cuda/hybridsort,"['./hybridsort', 'r']",121.67893738140417,57.97,70.53728,44,1.603119,0.227843,2.562047,"mergeSortPass(float4*, int,","Device ""Tesla K40c (0)""",7,78436.57,63756.0,103871.0
+11,/home/st1289/rodinia_3.1/cuda/srad/srad_v2,"['./srad', '2048', '2048', '0', '127', '0', '127', '0.5', '2']",11.85740730094855,34.79,4.125192,2,2.062596,2.017811,2.107381,[CUDA memcpy,"Device ""Tesla K40c (0)""",10,72350.9,63752.0,83931.0
+12,/home/st1289/rodinia_3.1/cuda/bfs,"['./bfs', '../../data/bfs/graph1MW_6.txt']",12.060280741156653,53.43,6.443808,12,0.536984,0.037472,3.142687,"Kernel(Node*, int*, bool*, bool*, bool*, int*,","Device ""Tesla K40c (0)""",8,72707.75,63752.0,79388.0
+13,/home/st1289/rodinia_3.1/cuda/leukocyte/CUDA,"['./leukocyte', '../../../data/leukocyte/testfile.avi', '10']",178.41637940039695,95.73,170.798,10,17.0798,16.53084,17.60215,"IMGVF_kernel(float**, float**, int*, int*, float, float, float, int,","Device ""Tesla K40c (0)""",11,80129.73,63752.0,94435.0
+14,/home/st1289/rodinia_3.1/cuda/cfd,"['./euler3d', '../../data/cfd/fvcorr.domn.097K', '', '', '']",1809.3084156648017,84.01,1520.0,6000,0.252751,0.249282,0.299235,"cuda_compute_flux(int, int*, float*, float*,","Device ""Tesla K40c (0)""",79,103366.47,63752.0,132080.0
+15,/home/st1289/rodinia_3.1/cuda/cfd,"['./euler3d', '../../data/cfd/fvcorr.domn.193K', '', '', '']",3566.678757103132,82.71,2950.0,6000,0.491228,0.487044,0.575205,"cuda_compute_flux(int, int*, float*, float*,","Device ""Tesla K40c (0)""",135,108984.44,63847.0,136625.0
+16,/home/st1289/rodinia_3.1/cuda/cfd,"['./euler3d', '../../data/cfd/missile.domn.0.2M', '', '']",4753.050552004649,86.05,4090.0,6000,0.682463,0.604292,0.734566,"cuda_compute_flux(int, int*, float*, float*,","Device ""Tesla K40c (0)""",165,104890.93,64036.0,124867.0
+17,/home/st1289/rodinia_3.1/cuda/streamcluster,"['./sc_gpu', '10', '20', '256', '65536', '65536', '1000', 'none', 'output.txt', '1']",1472.336342300054,55.39,815.5271,1611,0.506224,0.485636,0.524548,"kernel_compute_cost(int, int, long, Point*, int, int, float*, float*, int*,","Device ""Tesla K40c (0)""",103,90193.42,63657.0,101672.0
+18,/home/st1289/rodinia_3.1/cuda/backprop,"['./backprop', '65536']",2.617796114835826,58.17,1.522772,5,0.304554,0.00128,0.530759,[CUDA memcpy,"Device ""Tesla K40c (0)""",4,65858.5,64224.0,69340.0
+19,/home/st1289/rodinia_3.1/cuda/srad/srad_v1,"['./srad', '100', '0.5', '502', '458']",21.882067645181877,47.01,10.28676,200,0.051433,0.045761,0.057377,"reduce(long, int, int, float*,","Device ""Tesla K40c (0)""",6,72265.67,63566.0,86370.0
+20,/home/st1289/rodinia_3.1/cuda/dwt2d,"['./dwt2d', '192.bmp', '-d', '192x192', '-f', '-5', '-l', '3']",0.24755015045135406,39.88,0.098723,9,0.010969,0.00883,0.015552,"void dwt_cuda::fdwt53Kernel<int=64, int=8>(int const *, int*, int, int,","Device ""Tesla K40c (0)""",4,66066.0,64036.0,70168.0
+21,/home/st1289/rodinia_3.1/cuda/dwt2d,"['./dwt2d', 'rgb.bmp', '-d', '1024x1024', '-f', '-5', '-l', '3']",2.506260245901639,48.8,1.223055,3,0.407685,0.405765,0.408997,[CUDA memcpy,"Device ""Tesla K40c (0)""",4,65267.25,63941.0,67634.0
+22,/home/st1289/rodinia_3.1/cuda/myocyte,"['./myocyte.out', '100', '1', '0']",310.28968638861943,92.79,287.9178,3900,0.073825,0.070305,0.09712,"kernel(int, float*, float*, float*,","Device ""Tesla K40c (0)""",23,76013.22,64224.0,78732.0
+23,/home/st1289/rodinia_3.1/cuda/nn,"['./nn', 'filelist_4', '-r', '5', '-lat', '30', '-lng', '90']",0.059680000000000004,60.0,0.035808,1,0.035808,0.035808,0.035808,[CUDA memcpy,"Device ""Tesla K40c (0)""",4,65568.75,63752.0,69411.0
+24,/home/st1289/rodinia_3.1/cuda/kmeans,"['./kmeans', '-o', '-i', '../../data/kmeans/kdd_cup', '']",32.375021144629265,35.47,11.48342,5,2.296684,0.000799,10.84485,[CUDA memcpy,"Device ""Tesla K40c (0)""",28,64047.32,63753.0,67157.0

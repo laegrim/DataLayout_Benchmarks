@@ -1,4 +1,17 @@
-==2304== NVPROF is profiling process 2304, command: ./pathfinder 100000 100 20 > result.txt
-==2304== Profiling application: ./pathfinder 100000 100 20 > result.txt
-==2304== Profiling result:
-No events/metrics were profiled.
+==20473== NVPROF is profiling process 20473, command: ./pathfinder 100000 100 20 > result.txt
+==20473== Profiling application: ./pathfinder 100000 100 20 > result.txt
+==20473== Profiling result:
+No kernels were profiled.
+
+==20473== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  83.47  1.578406       166  9.51e-03  6.28e-04  0.342571  cuDeviceGetAttribute
+   7.97  0.150718         2  0.075359  0.075080  0.075638  cuDeviceTotalMem
+   7.72  0.145968         2  0.072984  0.055314  0.090654  cuDeviceGetName
+   0.31  5.87e-03         1  5.87e-03  5.87e-03  5.87e-03  cudaSetDevice
+   0.23  4.40e-03         2  2.20e-03  2.10e-03  2.30e-03  cuDeviceGetPCIBusId
+   0.18  3.49e-03         4  8.72e-04  6.28e-04  1.12e-03  cuDeviceGet
+   0.08  1.47e-03         2  7.33e-04  6.28e-04  8.38e-04  cuDeviceGetCount
+   0.04  7.68e-04         1  7.68e-04  7.68e-04  7.68e-04  cudaGetDeviceCount
+==20473== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.

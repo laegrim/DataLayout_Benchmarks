@@ -1,25 +1,60 @@
-==4692== NVPROF is profiling process 4692, command: ./pavle ../../data/huffman/test1024_H2.206587175259.in
-==4692== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==4692== Profiling application: ./pavle ../../data/huffman/test1024_H2.206587175259.in
-==4692== Profiling result:
-==4692== Metric result:
-Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+==20843== NVPROF is profiling process 20843, command: ./pavle ../../data/huffman/test1024_H2.206587175259.in 
+==20843== Profiling application: ./pavle ../../data/huffman/test1024_H2.206587175259.in 
+==20843== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  63.85  4.830392        10  0.483039  0.482150  0.484550  vlc_encode_kernel_sm64huff(unsigned int*, unsigned int const *, unsigned int const *, unsigned int*, unsigned int*, unsigned int*, unsigned int*, unsigned int*)
+  26.46  2.001941        32  0.062560  0.058560  0.066944  histo_kernel(unsigned char*, long, unsigned int*)
+   5.42  0.410022        36  0.011389  9.92e-04  0.102785  [CUDA memcpy HtoD]
+   1.84  0.139041         1  0.139041  0.139041  0.139041  pack2(unsigned int*, unsigned int*, unsigned int*, unsigned int*, unsigned int)
+   1.40  0.105921         2  0.052960  2.27e-03  0.103649  [CUDA memcpy DtoH]
+   0.48  0.036320         1  0.036320  0.036320  0.036320  void prescan<bool=1, bool=0>(unsigned int*, unsigned int const *, unsigned int*, int, int, int)
+   0.28  0.021088         2  0.010544  4.74e-03  0.016352  [CUDA memset]
+   0.22  0.016609         1  0.016609  0.016609  0.016609  void prescan<bool=0, bool=0>(unsigned int*, unsigned int const *, unsigned int*, int, int, int)
+   0.05  4.03e-03         1  4.03e-03  4.03e-03  4.03e-03  uniformAdd(unsigned int*, unsigned int*, int, int, int)
+
+==20843== System profiling result:
 Device "Tesla K40c (0)"
-	Kernel: vlc_encode_kernel_sm64huff(unsigned int*, unsigned int const *, unsigned int const *, unsigned int*, unsigned int*, unsigned int*, unsigned int*, unsigned int*)
-         10              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-         10              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: uniformAdd(unsigned int*, unsigned int*, int, int, int)
-          1              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: histo_kernel(unsigned char*, long, unsigned int*)
-         32              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-         32              gst_transactions_per_request     Global Store Transactions Per Request    0.000000    0.000000    0.000000
-	Kernel: pack2(unsigned int*, unsigned int*, unsigned int*, unsigned int*, unsigned int)
-          1              gld_transactions_per_request      Global Load Transactions Per Request   14.939788   14.939788   14.939788
-          1              gst_transactions_per_request     Global Store Transactions Per Request   15.302146   15.302146   15.302146
-	Kernel: void prescan<bool=0, bool=0>(unsigned int*, unsigned int const *, unsigned int*, int, int, int)
-          1              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: void prescan<bool=1, bool=0>(unsigned int*, unsigned int const *, unsigned int*, int, int, int)
-          1              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-          1              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         3      745.00      745.00      745.00
+  Memory Clock (MHz)         3     3004.00     3004.00     3004.00
+     Temperature (C)         5       46.00       46.00       46.00
+          Power (mW)         5    66454.80    63752.00    71776.00
+             Fan (%)         3       24.00       24.00       24.00
+Device "Quadro K620 (1)"
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         3     1058.00     1058.00     1058.00
+  Memory Clock (MHz)         3      900.00      900.00      900.00
+     Temperature (C)         5       52.00       52.00       52.00
+          Power (mW)         5     3705.40     3703.00     3709.00
+             Fan (%)         3       38.00       38.00       38.00
+
+==20843== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  94.89  225.5630        14  16.11165  4.75e-03  224.3741  cudaMalloc
+   1.98  4.704579         1  4.704579  4.704579  4.704579  cudaThreadSynchronize
+   0.78  1.864264       166  0.011230  6.98e-04  0.457042  cuDeviceGetAttribute
+   0.75  1.776903         2  0.888451  0.852553  0.924350  cudaGetDeviceProperties
+   0.53  1.270904        14  0.090778  7.19e-03  0.158959  cudaFree
+   0.27  0.642748         6  0.107124  7.40e-03  0.247377  cudaMemcpy
+   0.20  0.481555         2  0.240777  0.030660  0.450895  cudaStreamSynchronize
+   0.18  0.419116        32  0.013097  0.011454  0.028007  cudaMemcpyAsync
+   0.14  0.323643        46  7.04e-03  5.66e-03  0.017739  cudaLaunch
+   0.08  0.182844         2  0.091422  0.087860  0.094984  cuDeviceTotalMem
+   0.06  0.148134         2  0.074067  0.065511  0.082623  cuDeviceGetName
+   0.06  0.146594       198  7.40e-04  6.98e-04  1.26e-03  cudaSetupArgument
+   0.02  0.035759        46  7.77e-04  6.98e-04  1.33e-03  cudaConfigureCall
+   0.01  0.034082         2  0.017041  0.014667  0.019415  cudaMemset
+   0.01  0.030311         2  0.015155  0.012432  0.017879  cudaStreamCreate
+   0.01  0.014388         4  3.60e-03  3.07e-03  4.40e-03  cudaEventRecord
+   0.00  9.01e-03         4  2.25e-03  1.26e-03  3.63e-03  cudaEventCreate
+   0.00  8.38e-03         2  4.19e-03  4.05e-03  4.33e-03  cudaEventSynchronize
+   0.00  8.24e-03         1  8.24e-03  8.24e-03  8.24e-03  cudaGetDeviceCount
+   0.00  7.47e-03         1  7.47e-03  7.47e-03  7.47e-03  cudaSetDevice
+   0.00  7.40e-03         2  3.70e-03  2.93e-03  4.47e-03  cudaEventElapsedTime
+   0.00  6.84e-03         9  7.60e-04  6.98e-04  8.38e-04  cudaGetLastError
+   0.00  6.77e-03         2  3.39e-03  3.35e-03  3.42e-03  cuDeviceGetPCIBusId
+   0.00  3.70e-03         4  9.25e-04  6.99e-04  1.26e-03  cuDeviceGet
+   0.00  2.30e-03         2  1.15e-03  9.08e-04  1.40e-03  cuDeviceGetCount
+======== Error: Application returned non-zero code 1

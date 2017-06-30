@@ -1,0 +1,60 @@
+==17243== NVPROF is profiling process 17243, command: ./pavle ../../data/huffman/test1024_H2.206587175259.in
+==17243== Profiling application: ./pavle ../../data/huffman/test1024_H2.206587175259.in
+==17243== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  64.03  4.739093        10  0.473909  0.473126  0.476229  vlc_encode_kernel_sm64huff(unsigned int*, unsigned int const *, unsigned int const *, unsigned int*, unsigned int*, unsigned int*, unsigned int*, unsigned int*)
+  26.09  1.930869        32  0.060339  0.056704  0.064736  histo_kernel(unsigned char*, long, unsigned int*)
+   5.56  0.411588        36  0.011433  1.02e-03  0.103361  [CUDA memcpy HtoD]
+   1.85  0.136738         1  0.136738  0.136738  0.136738  pack2(unsigned int*, unsigned int*, unsigned int*, unsigned int*, unsigned int)
+   1.42  0.105185         2  0.052592  2.27e-03  0.102913  [CUDA memcpy DtoH]
+   0.50  0.036769         1  0.036769  0.036769  0.036769  void prescan<bool=1, bool=0>(unsigned int*, unsigned int const *, unsigned int*, int, int, int)
+   0.29  0.021152         2  0.010576  4.74e-03  0.016416  [CUDA memset]
+   0.22  0.016480         1  0.016480  0.016480  0.016480  void prescan<bool=0, bool=0>(unsigned int*, unsigned int const *, unsigned int*, int, int, int)
+   0.05  3.87e-03         1  3.87e-03  3.87e-03  3.87e-03  uniformAdd(unsigned int*, unsigned int*, int, int, int)
+
+==17243== System profiling result:
+Device "Tesla K40c (0)"
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         4      745.00      745.00      745.00
+  Memory Clock (MHz)         4     3004.00     3004.00     3004.00
+     Temperature (C)         7       44.29       44.00       45.00
+          Power (mW)         7    67476.00    63562.00    75641.00
+             Fan (%)         4       23.00       23.00       23.00
+Device "Quadro K620 (1)"
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         4     1058.00     1058.00     1058.00
+  Memory Clock (MHz)         4      900.00      900.00      900.00
+     Temperature (C)         7       51.00       51.00       51.00
+          Power (mW)         7     3734.86     3731.00     3744.00
+             Fan (%)         4       37.00       37.00       37.00
+
+==17243== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  61.82  226.4206        14  16.17290  4.61e-03  225.2429  cudaMalloc
+  34.92  127.8789         1  127.8789  127.8789  127.8789  cudaThreadExit
+   1.25  4.596324         1  4.596324  4.596324  4.596324  cudaThreadSynchronize
+   0.50  1.830326       166  0.011026  6.98e-04  0.444191  cuDeviceGetAttribute
+   0.48  1.743448         2  0.871724  0.862610  0.880838  cudaGetDeviceProperties
+   0.35  1.296953        14  0.092639  7.68e-03  0.154838  cudaFree
+   0.18  0.672085         6  0.112014  8.17e-03  0.257435  cudaMemcpy
+   0.12  0.442653         2  0.221326  0.017460  0.425193  cudaStreamSynchronize
+   0.11  0.397606        32  0.012425  0.011314  0.020533  cudaMemcpyAsync
+   0.09  0.331256        46  7.20e-03  5.45e-03  0.021861  cudaLaunch
+   0.05  0.179493         2  0.089746  0.085696  0.093797  cuDeviceTotalMem
+   0.04  0.150096       198  7.58e-04  6.98e-04  1.40e-03  cudaSetupArgument
+   0.03  0.127111         2  0.063555  0.062089  0.065022  cuDeviceGetName
+   0.01  0.035057        46  7.62e-04  6.98e-04  1.40e-03  cudaConfigureCall
+   0.01  0.034222         2  0.017111  0.015155  0.019067  cudaMemset
+   0.01  0.030311         2  0.015155  0.012432  0.017879  cudaStreamCreate
+   0.00  0.014456         4  3.61e-03  2.93e-03  4.61e-03  cudaEventRecord
+   0.00  9.57e-03         4  2.39e-03  1.47e-03  3.91e-03  cudaEventCreate
+   0.00  8.59e-03         2  4.29e-03  4.05e-03  4.54e-03  cudaEventSynchronize
+   0.00  7.54e-03         2  3.77e-03  3.56e-03  3.98e-03  cuDeviceGetPCIBusId
+   0.00  7.54e-03         1  7.54e-03  7.54e-03  7.54e-03  cudaSetDevice
+   0.00  7.40e-03         9  8.22e-04  6.98e-04  1.33e-03  cudaGetLastError
+   0.00  6.63e-03         2  3.32e-03  2.79e-03  3.84e-03  cudaEventElapsedTime
+   0.00  6.43e-03         1  6.43e-03  6.43e-03  6.43e-03  cudaGetDeviceCount
+   0.00  4.54e-03         4  1.13e-03  7.68e-04  1.61e-03  cuDeviceGet
+   0.00  3.21e-03         2  1.61e-03  1.12e-03  2.10e-03  cuDeviceGetCount

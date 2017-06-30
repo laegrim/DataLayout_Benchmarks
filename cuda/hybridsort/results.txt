@@ -1,28 +1,52 @@
-==2167== NVPROF is profiling process 2167, command: ./hybridsort r
-==2167== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==2167== Profiling application: ./hybridsort r
-==2167== Profiling result:
-==2167== Metric result:
-Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+==21244== NVPROF is profiling process 21244, command: ./hybridsort r
+==21244== Profiling application: ./hybridsort r
+==21244== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  57.97  70.53728        44  1.603119  0.227843  2.562047  mergeSortPass(float4*, int, int)
+  13.34  16.23274         4  4.058185  4.048914  4.066194  bucketsort(float*, int*, float*, int, unsigned int*, unsigned int*)
+   7.46  9.077935         4  2.269483  2.268636  2.270876  bucketcount(float*, int*, unsigned int*, int)
+   7.05  8.575177        12  0.714598  2.75e-03  3.637645  [CUDA memcpy DtoH]
+   5.90  7.179098        24  0.299129  1.50e-03  2.026617  [CUDA memcpy HtoD]
+   5.72  6.960340         4  1.740085  1.738517  1.741525  histogram1024Kernel(unsigned int*, float*, float, float, int)
+   0.88  1.074957         4  0.268739  0.268291  0.269443  bucketprefixoffset(unsigned int*, unsigned int*, int)
+   0.79  0.959404         4  0.239851  0.239523  0.240227  mergepack(float*, float*)
+   0.58  0.703848         4  0.175962  0.175042  0.176866  mergeSortFirst(float4*, int)
+   0.32  0.388292        16  0.024268  3.65e-03  0.083905  [CUDA memset]
+
+==21244== System profiling result:
 Device "Tesla K40c (0)"
-	Kernel: mergeSortFirst(float4*, int)
-          4              gld_transactions_per_request      Global Load Transactions Per Request    0.000000    0.000000    0.000000
-          4              gst_transactions_per_request     Global Store Transactions Per Request    3.999908    3.999908    3.999908
-	Kernel: mergepack(float*, float*)
-          4              gld_transactions_per_request      Global Load Transactions Per Request    1.968557    1.968557    1.968557
-          4              gst_transactions_per_request     Global Store Transactions Per Request    1.951327    1.951327    1.951327
-	Kernel: histogram1024Kernel(unsigned int*, float*, float, float, int)
-          4              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-          4              gst_transactions_per_request     Global Store Transactions Per Request    0.000000    0.000000    0.000000
-	Kernel: bucketsort(float*, int*, float*, int, unsigned int*, unsigned int*)
-          4              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-          4              gst_transactions_per_request     Global Store Transactions Per Request   31.536530   31.536530   31.536530
-	Kernel: mergeSortPass(float4*, int, int)
-         44              gld_transactions_per_request      Global Load Transactions Per Request    0.000000    0.000000    0.000000
-         44              gst_transactions_per_request     Global Store Transactions Per Request    8.501867   27.815618   20.876378
-	Kernel: bucketprefixoffset(unsigned int*, unsigned int*, int)
-          4              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-          4              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
-	Kernel: bucketcount(float*, int*, unsigned int*, int)
-          4              gld_transactions_per_request      Global Load Transactions Per Request    1.000000    1.000000    1.000000
-          4              gst_transactions_per_request     Global Store Transactions Per Request    1.000000    1.000000    1.000000
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         4      745.00      745.00      745.00
+  Memory Clock (MHz)         4     3004.00     3004.00     3004.00
+     Temperature (C)         7       46.00       46.00       46.00
+          Power (mW)         7    78436.57    63756.00   103871.00
+             Fan (%)         4       24.00       24.00       24.00
+Device "Quadro K620 (1)"
+                         Count         Avg         Min         Max
+      SM Clock (MHz)         4     1058.00     1058.00     1058.00
+  Memory Clock (MHz)         4      900.00      900.00      900.00
+     Temperature (C)         7       52.00       52.00       52.00
+          Power (mW)         7     3487.29     3473.00     3500.00
+             Fan (%)         4       38.00       38.00       38.00
+
+==21244== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+      %        ms                  ms        ms        ms  
+  64.11  229.4731        32  7.171034  5.03e-03  226.5614  cudaMalloc
+  19.72  70.58516         4  17.64629  17.62591  17.66063  cudaThreadSynchronize
+   9.60  34.34878        24  1.431199  8.31e-03  4.562801  cudaMemcpy
+   4.79  17.13332        12  1.427776  7.75e-03  4.272331  cudaMemcpyToSymbol
+   0.67  2.409174        32  0.075286  6.29e-03  0.143663  cudaFree
+   0.52  1.875309       166  0.011297  7.68e-04  0.464724  cuDeviceGetAttribute
+   0.33  1.192607        68  0.017538  0.010546  0.045187  cudaLaunch
+   0.06  0.202679        16  0.012667  8.24e-03  0.022069  cudaMemset
+   0.05  0.185919         2  0.092959  0.090096  0.095823  cuDeviceTotalMem
+   0.05  0.168874       220  7.67e-04  6.98e-04  3.77e-03  cudaSetupArgument
+   0.04  0.153790         2  0.076895  0.067676  0.086114  cuDeviceGetName
+   0.04  0.150160        52  2.89e-03  2.51e-03  5.80e-03  cudaBindTexture
+   0.02  0.054962        68  8.08e-04  6.98e-04  1.40e-03  cudaConfigureCall
+   0.00  7.26e-03         2  3.63e-03  3.21e-03  4.05e-03  cuDeviceGetPCIBusId
+   0.00  3.98e-03         4  9.95e-04  7.68e-04  1.33e-03  cuDeviceGet
+   0.00  2.72e-03         2  1.36e-03  1.12e-03  1.61e-03  cuDeviceGetCount
+   0.00  2.65e-03         4  6.63e-04  6.28e-04  6.99e-04  cudaCreateChannelDesc
