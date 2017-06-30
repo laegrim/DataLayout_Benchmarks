@@ -1,54 +1,54 @@
-==21556== NVPROF is profiling process 21556, command: ./dwt2d rgb.bmp -d 1024x1024 -f -5 -l 3
-==21556== Profiling application: ./dwt2d rgb.bmp -d 1024x1024 -f -5 -l 3
-==21556== Profiling result:
+==18341== NVPROF is profiling process 18341, command: ./dwt2d rgb.bmp -d 1024x1024 -f -5 -l 3
+==18341== Profiling application: ./dwt2d rgb.bmp -d 1024x1024 -f -5 -l 3
+==18341== Profiling result:
 Time(%)      Time     Calls       Avg       Min       Max  Name
       %        ms                  ms        ms        ms  
-  48.80  1.223055         3  0.407685  0.405765  0.408997  [CUDA memcpy DtoH]
-  13.33  0.333987         3  0.111329  0.110913  0.111553  void dwt_cuda::fdwt53Kernel<int=192, int=8>(int const *, int*, int, int, int)
-  12.32  0.308707         1  0.308707  0.308707  0.308707  [CUDA memcpy HtoD]
-   8.58  0.215011         9  0.023890  6.43e-03  0.050785  [CUDA memcpy DtoD]
-   6.58  0.164866         8  0.020608  0.015969  0.022112  [CUDA memset]
-   4.32  0.108227         3  0.036075  0.035873  0.036289  void dwt_cuda::fdwt53Kernel<int=128, int=8>(int const *, int*, int, int, int)
-   3.40  0.085153         1  0.085153  0.085153  0.085153  void c_CopySrcToComponents<int>(int*, int*, int*, unsigned char*, int)
-   2.69  0.067296         3  0.022432  0.022336  0.022496  void dwt_cuda::fdwt53Kernel<int=64, int=8>(int const *, int*, int, int, int)
+  49.29  1.230766         3  0.410255  0.409508  0.411269  [CUDA memcpy DtoH]
+  13.09  0.326915         3  0.108971  0.108737  0.109185  void dwt_cuda::fdwt53Kernel<int=192, int=8>(int const *, int*, int, int, int)
+  12.35  0.308324         1  0.308324  0.308324  0.308324  [CUDA memcpy HtoD]
+   8.58  0.214180         9  0.023797  6.53e-03  0.050144  [CUDA memcpy DtoD]
+   6.61  0.164930         8  0.020616  0.015968  0.021856  [CUDA memset]
+   4.13  0.103104         3  0.034368  0.033888  0.034688  void dwt_cuda::fdwt53Kernel<int=128, int=8>(int const *, int*, int, int, int)
+   3.42  0.085313         1  0.085313  0.085313  0.085313  void c_CopySrcToComponents<int>(int*, int*, int*, unsigned char*, int)
+   2.54  0.063360         3  0.021120  0.021024  0.021248  void dwt_cuda::fdwt53Kernel<int=64, int=8>(int const *, int*, int, int, int)
 
-==21556== System profiling result:
+==18341== System profiling result:
 Device "Tesla K40c (0)"
                          Count         Avg         Min         Max
       SM Clock (MHz)         3      745.00      745.00      745.00
   Memory Clock (MHz)         3     3004.00     3004.00     3004.00
-     Temperature (C)         4       48.00       48.00       48.00
-          Power (mW)         4    65267.25    63941.00    67634.00
+     Temperature (C)         4       47.00       47.00       47.00
+          Power (mW)         4    65639.25    63941.00    69032.00
              Fan (%)         3       24.00       24.00       24.00
 Device "Quadro K620 (1)"
                          Count         Avg         Min         Max
       SM Clock (MHz)         3     1058.00     1058.00     1058.00
   Memory Clock (MHz)         3      900.00      900.00      900.00
-     Temperature (C)         4       52.50       52.00       53.00
-          Power (mW)         4     3759.50     3750.00     3769.00
+     Temperature (C)         4       52.75       52.00       53.00
+          Power (mW)         4     3739.50     3737.00     3741.00
              Fan (%)         3       39.00       39.00       39.00
 
-==21556== API calls:
+==18341== API calls:
 Time(%)      Time     Calls       Avg       Min       Max  Name
       %        ms                  ms        ms        ms  
-  96.09  239.3158         4  59.82894  1.078419  235.7525  cudaMallocHost
-   1.03  2.569809         4  0.642452  0.532609  0.703232  cudaFreeHost
-   0.76  1.890876       166  0.011390  7.68e-04  0.437485  cuDeviceGetAttribute
-   0.70  1.739956        13  0.133842  9.85e-03  0.433644  cudaMemcpy
-   0.43  1.083310         8  0.135413  0.129137  0.157213  cudaMalloc
-   0.35  0.866101         1  0.866101  0.866101  0.866101  cudaGetDeviceProperties
-   0.34  0.858068         8  0.107258  0.098965  0.127041  cudaFree
-   0.07  0.184171         2  0.092085  0.090514  0.093657  cuDeviceTotalMem
-   0.05  0.121944         8  0.015243  0.013270  0.023606  cudaMemset
-   0.04  0.111955         2  0.055977  0.045047  0.066908  cuDeviceGetName
-   0.04  0.109512        10  0.010951  8.59e-03  0.021581  cudaLaunch
-   0.04  0.097149         3  0.032383  4.75e-03  0.085486  cudaThreadSynchronize
-   0.02  0.044001        42  1.05e-03  6.99e-04  8.80e-03  cudaGetLastError
-   0.02  0.038970        50  7.79e-04  6.98e-04  1.26e-03  cudaSetupArgument
-   0.00  9.01e-03        10  9.01e-04  7.68e-04  1.26e-03  cudaConfigureCall
-   0.00  7.40e-03         2  3.70e-03  3.56e-03  3.84e-03  cuDeviceGetPCIBusId
-   0.00  4.26e-03         1  4.26e-03  4.26e-03  4.26e-03  cudaSetDevice
-   0.00  3.98e-03         4  9.95e-04  7.68e-04  1.26e-03  cuDeviceGet
-   0.00  2.37e-03         2  1.19e-03  1.05e-03  1.33e-03  cuDeviceGetCount
-   0.00  1.12e-03         1  1.12e-03  1.12e-03  1.12e-03  cudaGetDeviceCount
-==21556== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.
+  95.90  229.9725         4  57.49314  1.088477  226.5229  cudaMallocHost
+   1.07  2.567366         4  0.641841  0.532889  0.707982  cudaFreeHost
+   0.78  1.880127       166  0.011326  6.99e-04  0.424635  cuDeviceGetAttribute
+   0.73  1.748894        13  0.134530  9.71e-03  0.435600  cudaMemcpy
+   0.47  1.131708         8  0.141463  0.135702  0.151136  cudaMalloc
+   0.37  0.894877         1  0.894877  0.894877  0.894877  cudaGetDeviceProperties
+   0.36  0.873434         8  0.109179  0.100571  0.126832  cudaFree
+   0.08  0.185638         2  0.092819  0.091911  0.093727  cuDeviceTotalMem
+   0.05  0.125018         8  0.015627  0.013410  0.023188  cudaMemset
+   0.05  0.110908         2  0.055454  0.044978  0.065930  cuDeviceGetName
+   0.04  0.104973        10  0.010497  8.59e-03  0.015854  cudaLaunch
+   0.04  0.102318         3  0.034106  4.47e-03  0.090654  cudaThreadSynchronize
+   0.02  0.042605        42  1.01e-03  6.98e-04  8.38e-03  cudaGetLastError
+   0.02  0.038483        50  7.69e-04  6.98e-04  1.19e-03  cudaSetupArgument
+   0.00  9.29e-03        10  9.28e-04  8.38e-04  1.19e-03  cudaConfigureCall
+   0.00  6.70e-03         2  3.35e-03  3.21e-03  3.49e-03  cuDeviceGetPCIBusId
+   0.00  4.54e-03         1  4.54e-03  4.54e-03  4.54e-03  cudaSetDevice
+   0.00  4.05e-03         4  1.01e-03  7.68e-04  1.33e-03  cuDeviceGet
+   0.00  2.31e-03         2  1.15e-03  9.78e-04  1.33e-03  cuDeviceGetCount
+   0.00  1.19e-03         1  1.19e-03  1.19e-03  1.19e-03  cudaGetDeviceCount
+==18341== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.

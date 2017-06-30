@@ -1,46 +1,47 @@
-==21479== NVPROF is profiling process 21479, command: ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
-==21479== Profiling application: ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
-==21479== Profiling result:
+==18652== NVPROF is profiling process 18652, command: ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
+==18652== Profiling application: ./particlefilter_float -x 128 -y 128 -z 10 -np 1000
+==18652== Profiling result:
 Time(%)      Time     Calls       Avg       Min       Max  Name
       %        ms                  ms        ms        ms  
-  34.99  2.922691         9  0.324743  0.324548  0.324868  normalize_weights_kernel(double*, int, double*, double*, double*, int*)
-  33.98  2.837986         9  0.315331  0.172514  0.371108  find_index_kernel(double*, double*, double*, double*, double*, double*, double*, int)
-  30.25  2.526782         9  0.280753  0.278403  0.283043  likelihood_kernel(double*, double*, double*, double*, double*, int*, int*, double*, unsigned char*, double*, double*, int, int, int, int, int, int, int*, double*)
-   0.33  0.027968         6  4.66e-03  1.12e-03  0.018656  [CUDA memcpy HtoD]
-   0.28  0.023008         9  2.56e-03  2.53e-03  2.69e-03  sum_kernel(double*, int)
-   0.11  9.57e-03         3  3.19e-03  2.78e-03  3.62e-03  [CUDA memcpy DtoH]
-   0.06  5.15e-03         1  5.15e-03  5.15e-03  5.15e-03  [CUDA memset]
+  37.65  2.921923         9  0.324658  0.324516  0.324868  normalize_weights_kernel(double*, int, double*, double*, double*, int*)
+  32.61  2.531197         9  0.281244  0.276771  0.286307  likelihood_kernel(double*, double*, double*, double*, double*, int*, int*, double*, unsigned char*, double*, double*, int, int, int, int, int, int, int*, double*)
+  28.89  2.242747         9  0.249194  0.048513  0.369444  find_index_kernel(double*, double*, double*, double*, double*, double*, double*, int)
+   0.37  0.028832         6  4.80e-03  1.12e-03  0.019296  [CUDA memcpy HtoD]
+   0.29  0.022400         9  2.49e-03  2.43e-03  2.66e-03  sum_kernel(double*, int)
+   0.12  9.54e-03         3  3.18e-03  2.78e-03  3.62e-03  [CUDA memcpy DtoH]
+   0.07  5.09e-03         1  5.09e-03  5.09e-03  5.09e-03  [CUDA memset]
 
-==21479== System profiling result:
+==18652== System profiling result:
 Device "Tesla K40c (0)"
                          Count         Avg         Min         Max
       SM Clock (MHz)         3      745.00      745.00      745.00
   Memory Clock (MHz)         3     3004.00     3004.00     3004.00
-     Temperature (C)         4       48.00       48.00       48.00
-          Power (mW)         4    67391.25    64130.00    73008.00
-             Fan (%)         3       25.00       25.00       25.00
+     Temperature (C)         4       46.50       46.00       47.00
+          Power (mW)         4    66633.50    63941.00    71776.00
+             Fan (%)         3       24.00       24.00       24.00
 Device "Quadro K620 (1)"
                          Count         Avg         Min         Max
       SM Clock (MHz)         3     1058.00     1058.00     1058.00
   Memory Clock (MHz)         3      900.00      900.00      900.00
-     Temperature (C)         4       52.25       52.00       53.00
-          Power (mW)         4     3612.00     3609.00     3621.00
+     Temperature (C)         4       53.00       53.00       53.00
+          Power (mW)         3     3569.67     3566.00     3577.00
              Fan (%)         3       39.00       39.00       39.00
 
-==21479== API calls:
+==18652== API calls:
 Time(%)      Time     Calls       Avg       Min       Max  Name
       %        ms                  ms        ms        ms  
-  94.03  225.8061        13  17.36970  6.22e-03  225.2160  cudaMalloc
-   3.21  7.711665         1  7.711665  7.711665  7.711665  cudaThreadSynchronize
-   1.54  3.700471        13  0.284651  6.49e-03  2.517080  cudaFree
-   0.79  1.889626       166  0.011383  6.98e-04  0.451104  cuDeviceGetAttribute
-   0.11  0.259885        36  7.22e-03  5.24e-03  0.033105  cudaLaunch
-   0.10  0.238649       315  7.57e-04  6.98e-04  1.54e-03  cudaSetupArgument
-   0.08  0.188013         2  0.094006  0.092121  0.095892  cuDeviceTotalMem
-   0.07  0.178024         9  0.019780  9.43e-03  0.042952  cudaMemcpy
-   0.05  0.112096         2  0.056048  0.045886  0.066210  cuDeviceGetName
-   0.01  0.030309        36  8.41e-04  6.98e-04  2.03e-03  cudaConfigureCall
-   0.01  0.021930         1  0.021930  0.021930  0.021930  cudaMemset
-   0.00  7.47e-03         2  3.74e-03  3.70e-03  3.77e-03  cuDeviceGetPCIBusId
-   0.00  3.91e-03         4  9.77e-04  7.68e-04  1.33e-03  cuDeviceGet
-   0.00  2.86e-03         2  1.43e-03  1.05e-03  1.82e-03  cuDeviceGetCount
+  95.29  225.7317        13  17.36398  6.22e-03  225.1451  cudaMalloc
+   3.00  7.115710         1  7.115710  7.115710  7.115710  cudaThreadSynchronize
+   0.76  1.812100       166  0.010916  7.68e-04  0.410317  cuDeviceGetAttribute
+   0.51  1.208114        13  0.092931  6.43e-03  0.271822  cudaFree
+   0.10  0.244236        36  6.78e-03  5.31e-03  0.027308  cudaLaunch
+   0.10  0.234668       315  7.44e-04  6.98e-04  1.33e-03  cudaSetupArgument
+   0.07  0.176769         2  0.088384  0.087721  0.089048  cuDeviceTotalMem
+   0.07  0.172716         9  0.019190  8.66e-03  0.042604  cudaMemcpy
+   0.06  0.132558         2  0.066279  0.065581  0.066977  cuDeviceGetName
+   0.01  0.028289        36  7.85e-04  6.98e-04  1.75e-03  cudaConfigureCall
+   0.01  0.021511         1  0.021511  0.021511  0.021511  cudaMemset
+   0.00  7.54e-03         2  3.77e-03  3.21e-03  4.33e-03  cuDeviceGetPCIBusId
+   0.00  3.84e-03         4  9.60e-04  7.68e-04  1.26e-03  cuDeviceGet
+   0.00  3.07e-03         2  1.54e-03  9.78e-04  2.10e-03  cuDeviceGetCount
+==18652== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.

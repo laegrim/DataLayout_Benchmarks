@@ -1,0 +1,10 @@
+#!/bin/bash
+
+register_caps=( 16 32 48 64 512 )
+for i in "${register_caps[@]}"
+do
+	make clean
+	make CL_NVCC_FLAGS="--maxrregcount=$i"
+	python3 run_benchmarks.py
+	mv cuda/rodinia_metrics.csv cuda/maxrregcount_${i}_metrics.csv
+done

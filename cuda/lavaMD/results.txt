@@ -1,42 +1,42 @@
-==21010== NVPROF is profiling process 21010, command: ./lavaMD -boxes1d 10
-==21010== Profiling application: ./lavaMD -boxes1d 10
-==21010== Profiling result:
+==18500== NVPROF is profiling process 18500, command: ./lavaMD -boxes1d 10
+==18500== Profiling application: ./lavaMD -boxes1d 10
+==18500== Profiling result:
 Time(%)      Time     Calls       Avg       Min       Max  Name
       %        ms                  ms        ms        ms  
-  93.07  17.42858         1  17.42858  17.42858  17.42858  kernel_gpu_cuda(par_str, dim_str, box_str*, FOUR_VECTOR*, double*, FOUR_VECTOR*)
-   4.85  0.907530         4  0.226882  0.065953  0.381572  [CUDA memcpy HtoD]
-   2.08  0.389572         1  0.389572  0.389572  0.389572  [CUDA memcpy DtoH]
+  93.17  17.67554         1  17.67554  17.67554  17.67554  kernel_gpu_cuda(par_str, dim_str, box_str*, FOUR_VECTOR*, double*, FOUR_VECTOR*)
+   4.74  0.899050         4  0.224762  0.065505  0.381220  [CUDA memcpy HtoD]
+   2.09  0.396453         1  0.396453  0.396453  0.396453  [CUDA memcpy DtoH]
 
-==21010== System profiling result:
+==18500== System profiling result:
 Device "Tesla K40c (0)"
                          Count         Avg         Min         Max
       SM Clock (MHz)         3      745.00      745.00      745.00
   Memory Clock (MHz)         3     3004.00     3004.00     3004.00
-     Temperature (C)         4       44.00       44.00       44.00
-          Power (mW)         4    65452.75    63566.00    70169.00
-             Fan (%)         3       23.00       23.00       23.00
+     Temperature (C)         4       47.00       47.00       47.00
+          Power (mW)         4    67898.75    63941.00    76743.00
+             Fan (%)         3       24.00       24.00       24.00
 Device "Quadro K620 (1)"
                          Count         Avg         Min         Max
       SM Clock (MHz)         3     1058.00     1058.00     1058.00
   Memory Clock (MHz)         3      900.00      900.00      900.00
-     Temperature (C)         4       50.00       50.00       50.00
-          Power (mW)         4     3517.25     3512.00     3519.00
-             Fan (%)         3       36.00       36.00       36.00
+     Temperature (C)         4       52.50       52.00       53.00
+          Power (mW)         4     3744.00     3741.00     3753.00
+             Fan (%)         3       39.00       39.00       39.00
 
-==21010== API calls:
+==18500== API calls:
 Time(%)      Time     Calls       Avg       Min       Max  Name
       %        ms                  ms        ms        ms  
-  97.99  247.6295         2  123.8147  17.49573  230.1337  cudaThreadSynchronize
-   0.74  1.878663       166  0.011317  6.98e-04  0.453340  cuDeviceGetAttribute
-   0.71  1.797367         5  0.359473  0.099733  0.529328  cudaMemcpy
-   0.22  0.566134         4  0.141533  0.132280  0.155676  cudaMalloc
-   0.18  0.459835         4  0.114958  0.103924  0.139613  cudaFree
-   0.07  0.185010         2  0.092505  0.089537  0.095473  cuDeviceTotalMem
-   0.06  0.151835         2  0.075917  0.067816  0.084019  cuDeviceGetName
-   0.01  0.022977         1  0.022977  0.022977  0.022977  cudaLaunch
-   0.00  7.19e-03         2  3.60e-03  3.42e-03  3.77e-03  cuDeviceGetPCIBusId
-   0.00  6.63e-03         6  1.11e-03  6.98e-04  2.79e-03  cudaSetupArgument
-   0.00  4.40e-03         4  1.10e-03  6.99e-04  1.40e-03  cuDeviceGet
-   0.00  2.44e-03         2  1.22e-03  1.05e-03  1.40e-03  cuDeviceGetCount
+  97.97  244.7127         2  122.3563  17.74220  226.9705  cudaThreadSynchronize
+   0.74  1.860292       166  0.011206  6.98e-04  0.426870  cuDeviceGetAttribute
+   0.72  1.801207         5  0.360241  0.098895  0.538267  cudaMemcpy
+   0.22  0.553142         4  0.138285  0.127949  0.156095  cudaMalloc
+   0.19  0.468215         4  0.117053  0.106648  0.140520  cudaFree
+   0.08  0.209105         2  0.104552  0.091562  0.117543  cuDeviceTotalMem
+   0.05  0.131092         2  0.065546  0.065232  0.065860  cuDeviceGetName
+   0.01  0.023466         1  0.023466  0.023466  0.023466  cudaLaunch
+   0.00  7.26e-03         2  3.63e-03  3.49e-03  3.77e-03  cuDeviceGetPCIBusId
+   0.00  7.05e-03         6  1.18e-03  7.68e-04  3.07e-03  cudaSetupArgument
+   0.00  3.84e-03         4  9.60e-04  7.68e-04  1.33e-03  cuDeviceGet
+   0.00  2.37e-03         2  1.19e-03  1.05e-03  1.33e-03  cuDeviceGetCount
    0.00  1.68e-03         1  1.68e-03  1.68e-03  1.68e-03  cudaConfigureCall
    0.00  1.05e-03         1  1.05e-03  1.05e-03  1.05e-03  cudaGetLastError
